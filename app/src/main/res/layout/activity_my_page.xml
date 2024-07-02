@@ -7,4 +7,218 @@
     android:layout_height="match_parent"
     tools:context=".MyPageActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_profile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/TitleText"
+            android:text="기자 프로필"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/iv_profile_image"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/profile_circle_shape"
+            android:clipToOutline="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/news"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_title" />
+
+        <TextView
+            android:id="@+id/tv_follow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/follow_message"
+            android:textColor="@color/point"
+            style="@style/ArticleTitle"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"/>
+
+        <LinearLayout
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_follow"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                style="@style/Default"
+                app:layout_constraintTop_toBottomOf="@id/tv_follow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_rename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rename"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/tv_nick_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nick_name"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv__nick_rename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nick_rename"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/followers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nick_name"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/tv_followers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/follower"
+                style="@style/Default"
+                app:layout_constraintTop_toBottomOf="@id/tv_follow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_followers_renames"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/follower_number"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/followers"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/count"
+                style="@style/Default"
+                app:layout_constraintTop_toBottomOf="@id/tv_follow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_email_rename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/news_count"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/count"
+            android:layout_marginTop="40dp">
+
+            <TextView
+                android:id="@+id/tv_news_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/tv_news_count_recount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email_rename"
+                style="@style/Default"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_weight="1"
+                android:gravity="right"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
