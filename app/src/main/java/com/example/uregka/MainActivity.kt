@@ -43,20 +43,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun makeNewsList() {
         // 뉴스 메인 피드 생성
-        val style = R.layout.item_follow_list
-        val followLayout = findViewById<LinearLayout>(R.id.ll_following_list)
+        val style = R.layout.item_news_list
+        val newsLayout = findViewById<LinearLayout>(R.id.ll_content)
         repeat(5) {
             val constraintLayout =
-                layoutInflater.inflate(style, followLayout, false)
+                layoutInflater.inflate(style, newsLayout, false)
 
-            val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image!!)
-            val resourceId = resources.getIdentifier(follow.profileImg, "drawable",packageName)
-            val textView = constraintLayout.findViewById<TextView>(R.id.profile_name!!)
-
-            imageView.setImageResource(resourceId)
-            textView.text = follow.userNickName
-
-            followLayout.addView(constraintLayout)
+            newsLayout.addView(constraintLayout)
         }
     }
 }
