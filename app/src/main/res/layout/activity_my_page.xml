@@ -15,14 +15,13 @@
 
         <TextView
             android:id="@+id/tv_profile_title"
+            style="@style/TitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/TitleText"
             android:text="기자 프로필"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:textStyle="bold"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_profile_image"
@@ -35,53 +34,53 @@
             android:scaleType="fitXY"
             android:src="@drawable/news"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_profile_title" />
 
         <TextView
             android:id="@+id/tv_follow"
+            style="@style/ArticleTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/follow_message"
             android:textColor="@color/point"
-            style="@style/ArticleTitle"
-            app:layout_constraintTop_toBottomOf="@id/iv_profile_image"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile_image" />
 
         <LinearLayout
             android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_follow"
-            android:layout_marginTop="30dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_follow">
 
             <TextView
                 android:id="@+id/tv_name"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/name"
-                style="@style/Default"
-                app:layout_constraintTop_toBottomOf="@id/tv_follow"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_weight="1"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_follow" />
 
             <TextView
                 android:id="@+id/tv_rename"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/rename"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:text="@string/rename"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
 
@@ -89,32 +88,32 @@
             android:id="@+id/nick_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            android:layout_marginTop="40dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name">
 
             <TextView
                 android:id="@+id/tv_nick_name"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/nick_name"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_weight="1"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tv__nick_rename"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/nick_rename"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:text="@string/nick_rename"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
 
@@ -122,33 +121,33 @@
             android:id="@+id/followers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nick_name"
-            android:layout_marginTop="40dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nick_name">
 
             <TextView
                 android:id="@+id/tv_followers"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/follower"
-                style="@style/Default"
-                app:layout_constraintTop_toBottomOf="@id/tv_follow"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_weight="1"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_follow" />
 
             <TextView
                 android:id="@+id/tv_followers_renames"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/follower_number"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:text="@string/follower_number"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
 
@@ -156,33 +155,33 @@
             android:id="@+id/count"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/followers"
-            android:layout_marginTop="40dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/followers">
 
             <TextView
                 android:id="@+id/tv_email"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/count"
-                style="@style/Default"
-                app:layout_constraintTop_toBottomOf="@id/tv_follow"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_weight="1"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_follow" />
 
             <TextView
                 android:id="@+id/tv_email_rename"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/news_count"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:text="@string/news_count"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
 
@@ -190,34 +189,44 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/count"
-            android:layout_marginTop="40dp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/count">
 
             <TextView
                 android:id="@+id/tv_news_count"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="@string/email"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_weight="1"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/tv_news_count_recount"
+                style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email_rename"
-                style="@style/Default"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_weight="1"
-                android:gravity="right"/>
+                android:gravity="right"
+                android:text="@string/email_rename"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
