@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="@string/et_search"
         style="@style/Default" />
-    
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        
+
         <LinearLayout
             android:id="@+id/ll_following_list"
             android:layout_width="match_parent"
