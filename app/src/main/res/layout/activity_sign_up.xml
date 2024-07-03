@@ -11,7 +11,7 @@
 
 
     <ImageView
-        android:id="@+id/img_login_icon"
+        android:id="@+id/img_sign_up_icon"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="50dp"
@@ -37,10 +37,10 @@
         android:paddingStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_login_icon" />
+        app:layout_constraintTop_toBottomOf="@+id/img_sign_up_icon" />
 
     <TextView
-        android:id="@+id/tv_id_not_found"
+        android:id="@+id/tv_sign_up_id_not_found"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -68,10 +68,10 @@
         android:paddingStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_id_not_found" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_id_not_found" />
 
     <TextView
-        android:id="@+id/tv_password_wrong"
+        android:id="@+id/tv_sgin_up_password_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -99,7 +99,7 @@
         android:paddingStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password_wrong" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sgin_up_password_wrong" />
 
     <TextView
         android:id="@+id/tv_nick_name_wrong"
