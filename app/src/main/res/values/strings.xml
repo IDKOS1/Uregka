@@ -18,4 +18,12 @@
 
     <string name="email">E-mail</string>
     <string name="email_rename">이메일 정보가 없습니다.</string>
+
+    <string name="reporter_name">(기자 이름)</string>
+    <string name="news">(기사 내용이 없습니다.)</string>
+    <string name="date">2024-07-03</string>
+
+    <string name="following_list_title">구독 중인 기자</string>
+    <string name="et_search">검색</string>
+    <string name="tv_new_content">새로운 기사</string>
 </resources>
