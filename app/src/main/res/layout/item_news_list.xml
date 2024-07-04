@@ -23,40 +23,68 @@
 
     <TextView
         android:id="@+id/tv_date"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_news_image"
         android:gravity="right|center_vertical"
+        android:background="@android:color/transparent"
         android:text="@string/date"/>
 
     <TextView
         android:id="@+id/tv_news"
+        style="@style/ArticleTitle"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center_vertical"
+        android:layout_height="70dp"
         android:text="@string/news"
-        style="@style/Default"
+        android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_news_image" />
+        app:layout_constraintTop_toBottomOf="@id/frame" />
 
     <FrameLayout
-        android:layout_width="wrap_content"
+        android:id="@+id/frame"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/iv_news_image"
-        app:layout_constraintBottom_toTopOf="@id/tv_news"
+        app:layout_constraintBottom_toTopOf="@id/tv_date"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="10dp">
 
-        <Button
-            android:id="@+id/btn_name"
-            android:layout_width="200dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/reporter_name"
-            android:backgroundTint="@color/white"
-            style="@style/UserName"
-            android:elevation="10dp"
-            android:translationZ="10dp"/>
+            app:cardCornerRadius="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_retangle"
+                android:elevation="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="3dp"
+                android:translationZ="10dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/profile_circle_shape"
+                    android:clipToOutline="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/person" />
+
+                <TextView
+                    style="@style/UserName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="@string/reporter_name"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </FrameLayout>
 
