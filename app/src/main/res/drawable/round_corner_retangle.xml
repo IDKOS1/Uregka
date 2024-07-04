@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--    <item-->
+<!--        android:bottom="3dp"-->
+<!--        android:left="1dp"-->
+<!--        android:right="3dp"-->
+<!--        android:top="1dp">-->
+<!--        <shape android:shape="rectangle">-->
+<!--            <solid android:color="#000000" /> &lt;!&ndash; 그림자 색상 &ndash;&gt;-->
+<!--            <corners android:radius="16dp" /> &lt;!&ndash; 모서리의 둥글기 &ndash;&gt;-->
+<!--        </shape>-->
+<!--    </item>-->
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+</layer-list>
