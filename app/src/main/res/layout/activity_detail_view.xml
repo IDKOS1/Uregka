@@ -118,7 +118,7 @@
                     style="@style/UserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="안녕하세여"
+                    android:text="제목 정보가 없습니다."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:text="24-05-05"
+                    android:text="날짜 정보가 없습니다."
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <!--본문-->
@@ -138,14 +138,11 @@
                     style="@style/Default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하
-                    세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여
-                    안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕 "
+                    android:text="내용 정보가 없습니다."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
