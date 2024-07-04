@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/home"
+        android:title="홈"
+        android:enabled="true"
+        android:icon="@drawable/ic_home" />
+
+    <item android:id="@+id/reporter"
+        android:title="기자"
+        android:enabled="true"
+        android:icon="@drawable/ic_reporter" />
+
+    <item android:id="@+id/search"
+        android:title="검색"
+        android:enabled="true"
+        android:icon="@drawable/ic_search" />
+
+    <item android:id="@+id/my_page"
+        android:title="마이페이지"
+        android:enabled="true"
+        android:icon="@drawable/ic_user" />
+
+    <item android:id="@+id/setting"
+        android:title="설정"
+        android:enabled="true"
+        android:icon="@drawable/ic_set" />
+</menu>
