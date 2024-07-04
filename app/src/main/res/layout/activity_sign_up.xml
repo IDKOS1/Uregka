@@ -40,7 +40,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_sign_up_icon" />
 
     <TextView
-        android:id="@+id/tv_sign_up_id_not_found"
+        android:id="@+id/tv_sign_up_id_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="2dp"
         android:autofillHints="password"
         android:background="@drawable/edittext_rounded_corner_rectangle"
@@ -68,7 +68,7 @@
         android:paddingStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_id_not_found" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_id_wrong" />
 
     <TextView
         android:id="@+id/tv_sgin_up_password_wrong"
@@ -77,8 +77,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
-        android:text="@string/login_wrong_password"
-        android:visibility="visible"
+        android:text="@string/password_rule"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sign_up_password" />
@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="2dp"
         android:autofillHints="name"
         android:background="@drawable/edittext_rounded_corner_rectangle"
@@ -102,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_sgin_up_password_wrong" />
 
     <TextView
-        android:id="@+id/tv_nick_name_wrong"
+        android:id="@+id/tv_sign_up_nickname_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="2dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/edittext_rounded_corner_rectangle"
@@ -130,28 +130,28 @@
         android:paddingStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_nick_name_wrong" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_nickname_wrong" />
 
     <TextView
-        android:id="@+id/tv_email_wrong"
+        android:id="@+id/tv_sign_up_email_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
-        android:text="@string/sign_up_email_wrong"
+        android:text="@string/wrong_email_address"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sign_up_email" />
 
     <EditText
-        android:id="@+id/et_intro"
+        android:id="@+id/et_sign_up_intro"
         style="@style/Default"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginRight="2dp"
         android:autofillHints="emailAddress"
         android:background="@drawable/edittext_rounded_corner_rectangle"
@@ -161,10 +161,10 @@
         android:paddingStart="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_wrong" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_email_wrong" />
 
     <TextView
-        android:id="@+id/tv_intro"
+        android:id="@+id/tv_sign_up_intro_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -174,7 +174,7 @@
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_intro" />
+        app:layout_constraintTop_toBottomOf="@+id/et_sign_up_intro" />
 
 
     <android.widget.Button
@@ -195,7 +195,7 @@
         style="@style/Sub"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/tv_return_text"
         android:textAlignment="textEnd"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -209,7 +209,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="50dp"
         android:clickable="true"
         android:text="@string/tv_return_text_click"
         android:textColor="@color/point"
