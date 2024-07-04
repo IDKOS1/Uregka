@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var idEditText: EditText
@@ -53,7 +52,9 @@ class SignUpActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (isDuplicationId()) {
+                val id = idEditText.text.toString().trim()
+
+                if (isDuplicationId(id)) {
                     idWrongTextView.visibility = View.INVISIBLE
                     isId = true
                 } else {
@@ -71,7 +72,9 @@ class SignUpActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (isRegularPassword()) {
+                val password = passwordEditText.text.toString().trim()
+
+                if (isRegularPassword(password)) {
                     passwordWrongTextView.visibility = View.INVISIBLE
                     isPassword = true
                 } else {
@@ -89,7 +92,9 @@ class SignUpActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (isDuplicationNickname()) {
+                val nickname = nicknameEditText.text.toString().trim()
+
+                if (isDuplicationNickname(nickname)) {
                     nicknameWrongTextView.visibility = View.INVISIBLE
                     isNickname = true
                 } else {
@@ -107,7 +112,9 @@ class SignUpActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (isRegularEmail()) {
+                val email = emailEditText.text.toString().trim()
+
+                if (isRegularEmail(email)) {
                     emailWrongTextView.visibility = View.INVISIBLE
                     isEmail = true
                 } else {
@@ -124,7 +131,9 @@ class SignUpActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (isRegularIntro()) {
+                val intro = introEditText.text.toString().trim()
+
+                if (isRegularIntro(intro)) {
                     introWrongTextView.visibility = View.INVISIBLE
                     isIntro = true
                 } else {
@@ -159,7 +168,8 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             //이메일 중복 체크
-            if (!isDuplicationEmail()) {
+            val email = emailEditText.text.toString()
+            if (!isDuplicationEmail(email)) {
                 emailWrongTextView.setText("이미 등록된 이메일 입니다.")
                 emailWrongTextView.visibility = View.VISIBLE
                 Toast.makeText(this, "이미 등록된 이메일 입니다.", Toast.LENGTH_SHORT).show()
@@ -184,60 +194,5 @@ class SignUpActivity : AppCompatActivity() {
 
     }
 
-    private fun isDuplicationId(): Boolean {
-        val id = idEditText.text.toString().trim()
-        return if (UserData.userList.containsKey(id)) {
-            false
-        } else {
-            true
-        }
-    }
 
-    //비밀번호 유효성
-    private fun isRegularPassword(): Boolean {
-        val password = passwordEditText.text.toString().trim()
-        val passwordPattern =
-            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@!%*#?&.]{5,12}$"
-        val pattern = Pattern.matches(passwordPattern, password)
-
-        return pattern
-    }
-
-    //이메일 유효성
-    private fun isRegularEmail(): Boolean {
-        val email = emailEditText.text.toString().trim()
-        val pattern = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
-
-        return pattern
-    }
-
-    private fun isDuplicationNickname(): Boolean {
-        val nickname = nicknameEditText.text.toString().trim()
-        for ((_, value) in UserData.userList) {
-            if (value.userNickName == nickname) {
-                return false
-            }
-        }
-        return true
-    }
-
-
-    //이메일 중복
-    private fun isDuplicationEmail(): Boolean {
-        val email = emailEditText.text.toString()
-        for ((_, value) in UserData.userList) {
-            if (value.userEmail == email) {
-                return false
-            }
-        }
-        return true
-    }
-
-    //소개 유효성
-    private fun isRegularIntro(): Boolean {
-        val intro = introEditText.text.toString().trim()
-        val introPattern = "^[A-Za-z0-9가-힣\$@!%*#?&.]{2,18}\$"
-        val pattern = Pattern.matches(introPattern, intro)
-        return pattern
-    }
 }
