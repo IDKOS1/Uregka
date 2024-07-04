@@ -47,7 +47,7 @@
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
         android:text="@string/sign_up_id_wrong"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sign_up_id" />
