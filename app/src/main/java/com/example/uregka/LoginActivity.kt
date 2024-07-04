@@ -2,8 +2,10 @@ package com.example.uregka
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
@@ -21,20 +23,34 @@ class LoginActivity : AppCompatActivity() {
         val signUpButton = findViewById<Button>(R.id.btn_sign_up)
         val loginButton = findViewById<Button>(R.id.btn_login)
         val idEditText = findViewById<EditText>(R.id.et_login_id)
+        val idWrongText = findViewById<TextView>(R.id.tv_login_id_wrong)
         val passwordEditText = findViewById<EditText>(R.id.et_login_password)
-
-
-
+        val passwordWrongText = findViewById<TextView>(R.id.tv_login_password_wrong)
 
 
         loginButton.setOnClickListener {
+            val id = idEditText.text.toString().trim()
+            if (isDuplicationId(id)) {
+                idWrongText.visibility = View.VISIBLE
+                return@setOnClickListener
+            } else {
+                idWrongText.visibility = View.INVISIBLE
+            }
+
+            val password = passwordEditText.text.toString().trim()
+            if (!isRegularPassword(password)) {
+                passwordWrongText.visibility = View.VISIBLE
+                return@setOnClickListener
+            } else {
+                passwordWrongText.visibility = View.INVISIBLE
+            }
 
 
-
-            if (idEditText.text.toString().trim().isEmpty() || passwordEditText.text.toString().trim()
+            if (idEditText.text.toString().trim().isEmpty() || passwordEditText.text.toString()
+                    .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, "아이디/비밀번호를 확인해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "아이디/비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 

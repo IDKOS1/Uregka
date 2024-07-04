@@ -4,7 +4,11 @@ import java.util.regex.Pattern
 
 //아이디 중복 체크
 fun isDuplicationId(id: String): Boolean {
-    return !UserData.userList.containsKey(id)
+    return if (UserData.userList.containsKey(id)){
+        false
+    }else{
+        true
+    }
 }
 
 //비밀번호 유효성
@@ -16,26 +20,27 @@ fun isRegularPassword(password: String): Boolean {
     return pattern
 }
 
+//이메일 유효성
 fun isRegularEmail(email: String): Boolean {
     val pattern = android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
 
     return pattern
 }
 
-//이메일 유효성
-fun isDuplicationNickname(nickname: String): Boolean {
+//이메일 중복
+fun isDuplicationEmail(email: String): Boolean {
     for ((_, value) in UserData.userList) {
-        if (value.userNickName == nickname) {
+        if (value.userEmail == email) {
             return false
         }
     }
     return true
 }
 
-//이메일 중복
-fun isDuplicationEmail(email: String): Boolean {
+//닉네임 중복
+fun isDuplicationNickname(nickname: String): Boolean {
     for ((_, value) in UserData.userList) {
-        if (value.userEmail == email) {
+        if (value.userNickName == nickname) {
             return false
         }
     }
