@@ -30,32 +30,34 @@
 
     <TextView
         android:id="@+id/tv_news"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center_vertical"
-        android:text="@string/news"
         style="@style/Default"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="@string/news"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/iv_news_image" />
+        app:layout_constraintTop_toBottomOf="@id/frame" />
 
     <FrameLayout
+        android:id="@+id/frame"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/iv_news_image"
-        app:layout_constraintBottom_toTopOf="@id/tv_news"
+        app:layout_constraintBottom_toTopOf="@id/tv_date"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="10dp">
 
         <Button
             android:id="@+id/btn_name"
+            style="@style/UserName"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/reporter_name"
             android:backgroundTint="@color/white"
-            style="@style/UserName"
             android:elevation="10dp"
-            android:translationZ="10dp"/>
+            android:text="@string/reporter_name"
+            android:translationZ="10dp" />
 
     </FrameLayout>
 
