@@ -170,8 +170,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
-        android:text="@string/tv_intro_wrong"
-        android:visibility="visible"
+        android:text="@string/intro_wrong"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sign_up_intro" />

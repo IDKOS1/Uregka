@@ -46,4 +46,5 @@
     <string name="tv_return_text_click">로그인 하러 가기</string>
     <string name="wrong_email_address">잘못된 이메일 형식입니다.</string>
     <string name="password_rule">5~12자, 영문자, 숫자, 특수문자를 최소 1개 포함해야 합니다.</string>
+    <string name="intro_wrong">최소 2자에서 최대 18자까지 입력해주세요.</string>
 </resources>

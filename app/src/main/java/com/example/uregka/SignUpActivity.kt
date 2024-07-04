@@ -107,33 +107,23 @@ class SignUpActivity : AppCompatActivity() {
         })
 
         //짧은 소개 입력
-        // TODO
+        introEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (isRegularIntro()) {
+                    introWrongTextView.visibility = View.INVISIBLE
+                } else {
+                    introWrongTextView.visibility = View.VISIBLE
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+
+        })
 
         //회원 가입 버튼
         signUpButton.setOnClickListener {
-
-            if (!isRegularEmail()) {
-                return@setOnClickListener
-            }
-
-            if (!isDuplicationEmail()) {
-                emailWrongTextView.setText("이미 등록된 이메일 입니다.")
-                emailWrongTextView.visibility = View.VISIBLE
-                return@setOnClickListener
-            }
-
-            if (!isRegularPassword()) {
-                return@setOnClickListener
-            }
-
-            if (!isDuplicationId()) {
-                return@setOnClickListener
-            }
-
-            if (!isDuplicationNickname()) {
-                return@setOnClickListener
-            }
 
             // 비었을 때
             if (idEditText.text.toString().trim()
@@ -146,6 +136,34 @@ class SignUpActivity : AppCompatActivity() {
                 Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+
+            if (!isDuplicationId()) {
+                return@setOnClickListener
+            }
+
+            if (!isRegularEmail()) {
+                return@setOnClickListener
+            }
+
+            if (!isRegularPassword()) {
+                return@setOnClickListener
+            }
+
+            if (!isDuplicationNickname()) {
+                return@setOnClickListener
+            }
+
+            if (!isDuplicationEmail()) {
+                emailWrongTextView.setText("이미 등록된 이메일 입니다.")
+                emailWrongTextView.visibility = View.VISIBLE
+                return@setOnClickListener
+            }
+
+            if(!isRegularIntro()){
+                return@setOnClickListener
+            }
+
+
 
             //데이터 전달
             val intent = Intent(this, LoginActivity::class.java).apply {
@@ -178,7 +196,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun isRegularPassword(): Boolean {
         val password = passwordEditText.text.toString().trim()
         val passwordPattern =
-            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@$!%*#?&.]{5,12}$"
+            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@!%*#?&.]{5,12}$"
         val pattern = Pattern.matches(passwordPattern, password)
 
         return pattern
@@ -192,7 +210,6 @@ class SignUpActivity : AppCompatActivity() {
         return pattern
     }
 
-
     private fun isDuplicationNickname(): Boolean {
         val nickname = nicknameEditText.text.toString().trim()
         for ((_, value) in UserData.userList) {
@@ -203,6 +220,7 @@ class SignUpActivity : AppCompatActivity() {
         return true
     }
 
+
     //이메일 중복
     private fun isDuplicationEmail(): Boolean {
         val email = emailEditText.text.toString()
@@ -212,5 +230,13 @@ class SignUpActivity : AppCompatActivity() {
             }
         }
         return true
+    }
+
+    //소개 유효성
+    private fun isRegularIntro(): Boolean {
+        val intro = introEditText.text.toString().trim()
+        val introPattern = "^[A-Za-z0-9가-힣\$@!%*#?&.]{2,18}\$"
+        val pattern = Pattern.matches(introPattern, intro)
+        return pattern
     }
 }
