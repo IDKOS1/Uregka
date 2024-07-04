@@ -34,7 +34,9 @@
         android:elevation="3dp"
         android:hint="@string/login_edittext_hint"
         android:inputType="text"
-        android:paddingStart="60dp"
+        android:drawableLeft="@drawable/icm_user_resize"
+        android:drawablePadding="20dp"
+        android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_login_icon" />
@@ -65,7 +67,9 @@
         android:elevation="3dp"
         android:hint="@string/login_edittext_password_hint"
         android:inputType="textPassword"
-        android:paddingStart="60dp"
+        android:drawableLeft="@drawable/icm_pw_resize"
+        android:drawablePadding="30dp"
+        android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_id_not_found" />
