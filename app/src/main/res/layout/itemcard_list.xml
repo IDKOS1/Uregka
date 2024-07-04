@@ -7,8 +7,6 @@
 
 
     <!--        기자 리스트 1-->
-
-
     <!-- 이미지 -->
     <ImageView
         android:id="@+id/img_profile"
