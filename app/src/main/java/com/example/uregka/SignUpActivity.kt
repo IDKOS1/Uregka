@@ -42,6 +42,11 @@ class SignUpActivity : AppCompatActivity() {
         val signUpButton = findViewById<Button>(R.id.btn_sign_up_complete)
         val returnClickTextView = findViewById<TextView>(R.id.tv_return_click)
 
+        var isId = false
+        var isPassword = false
+        var isNickname = false
+        var isEmail = false
+        var isIntro = false
 
         //아이디 입력
         idEditText.addTextChangedListener(object : TextWatcher {
@@ -50,8 +55,10 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (isDuplicationId()) {
                     idWrongTextView.visibility = View.INVISIBLE
+                    isId = true
                 } else {
                     idWrongTextView.visibility = View.VISIBLE
+                    isId = false
                 }
             }
 
@@ -66,8 +73,10 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (isRegularPassword()) {
                     passwordWrongTextView.visibility = View.INVISIBLE
+                    isPassword = true
                 } else {
                     passwordWrongTextView.visibility = View.VISIBLE
+                    isPassword = false
                 }
             }
 
@@ -82,8 +91,10 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (isDuplicationNickname()) {
                     nicknameWrongTextView.visibility = View.INVISIBLE
+                    isNickname = true
                 } else {
                     nicknameWrongTextView.visibility = View.VISIBLE
+                    isNickname = false
                 }
             }
 
@@ -98,8 +109,10 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (isRegularEmail()) {
                     emailWrongTextView.visibility = View.INVISIBLE
+                    isEmail = true
                 } else {
                     emailWrongTextView.visibility = View.VISIBLE
+                    isEmail = false
                 }
             }
 
@@ -113,8 +126,10 @@ class SignUpActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if (isRegularIntro()) {
                     introWrongTextView.visibility = View.INVISIBLE
+                    isIntro = true
                 } else {
                     introWrongTextView.visibility = View.VISIBLE
+                    isIntro = false
                 }
             }
 
@@ -137,33 +152,19 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (!isDuplicationId()) {
+            //유효한 입력 체크
+            if (!isId || !isPassword || !isNickname || !isEmail || !isIntro) {
+                Toast.makeText(this, "유효하지 않은 입력이 있습니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (!isRegularEmail()) {
-                return@setOnClickListener
-            }
-
-            if (!isRegularPassword()) {
-                return@setOnClickListener
-            }
-
-            if (!isDuplicationNickname()) {
-                return@setOnClickListener
-            }
-
+            //이메일 중복 체크
             if (!isDuplicationEmail()) {
                 emailWrongTextView.setText("이미 등록된 이메일 입니다.")
                 emailWrongTextView.visibility = View.VISIBLE
+                Toast.makeText(this, "이미 등록된 이메일 입니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
-            if(!isRegularIntro()){
-                return@setOnClickListener
-            }
-
-
 
             //데이터 전달
             val intent = Intent(this, LoginActivity::class.java).apply {
