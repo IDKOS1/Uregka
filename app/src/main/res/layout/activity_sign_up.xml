@@ -13,7 +13,7 @@
     <ImageView
         android:id="@+id/img_sign_up_icon"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_marginTop="50dp"
         android:contentDescription="@string/login_screen_icon"
         android:src="@drawable/welcome"
@@ -140,10 +140,41 @@
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
         android:text="@string/sign_up_email_wrong"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_sign_up_email" />
+
+    <EditText
+        android:id="@+id/et_intro"
+        style="@style/Default"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="2dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/edittext_rounded_corner_rectangle"
+        android:elevation="3dp"
+        android:hint="@string/tv_intro_hint"
+        android:inputType="text"
+        android:paddingStart="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_email_wrong" />
+
+    <TextView
+        android:id="@+id/tv_intro"
+        style="@style/SignUpTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:paddingStart="8dp"
+        android:text="@string/tv_intro_wrong"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_intro" />
 
 
     <android.widget.Button
@@ -151,13 +182,40 @@
         style="@style/Button"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginLeft="2dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginRight="2dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/button_rounded_corner_rectangle"
         android:text="@string/sign_up_complete_button_text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email_wrong" />
+        app:layout_constraintBottom_toTopOf="@+id/tv_return_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/tv_return_text"
+        style="@style/Sub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:text="@string/tv_return_text"
+        android:textAlignment="textEnd"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_return_click"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_return_click"
+        style="@style/Sub"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="35dp"
+        android:clickable="true"
+        android:text="@string/tv_return_text_click"
+        android:textColor="@color/point"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_return_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

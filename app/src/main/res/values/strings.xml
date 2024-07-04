@@ -40,4 +40,8 @@
     <string name="following_list_title">구독 중인 기자</string>
     <string name="et_search">검색</string>
     <string name="tv_new_content">새로운 기사</string>
+    <string name="tv_intro_wrong">짧은 소개를 입력해주세요.</string>
+    <string name="tv_intro_hint">짧은 소개</string>
+    <string name="tv_return_text">이미 회원이 있으신가요?</string>
+    <string name="tv_return_text_click">로그인 하러 가기</string>
 </resources>
