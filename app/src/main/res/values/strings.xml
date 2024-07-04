@@ -45,5 +45,5 @@
     <string name="tv_return_text">이미 회원이 있으신가요?</string>
     <string name="tv_return_text_click">로그인 하러 가기</string>
     <string name="wrong_email_address">잘못된 이메일 형식입니다.</string>
-    <string name="password_rule">8~16자, 영문자, 숫자, 특수문자를 최소 1개 포함해야 합니다.</string>
+    <string name="password_rule">5~12자, 영문자, 숫자, 특수문자를 최소 1개 포함해야 합니다.</string>
 </resources>

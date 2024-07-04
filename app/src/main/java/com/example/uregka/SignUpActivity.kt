@@ -76,7 +76,20 @@ class SignUpActivity : AppCompatActivity() {
         })
 
         //닉네임 입력
-        // TODO
+        nicknameEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (isDuplicationNickname()) {
+                    nicknameWrongTextView.visibility = View.INVISIBLE
+                } else {
+                    nicknameWrongTextView.visibility = View.VISIBLE
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+
+        })
 
         //이메일 입력
         emailEditText.addTextChangedListener(object : TextWatcher {
@@ -114,11 +127,15 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (isDuplicationId()) {
+            if (!isDuplicationId()) {
                 return@setOnClickListener
             }
 
+            if (!isDuplicationNickname()) {
+                return@setOnClickListener
+            }
 
+            // 비었을 때
             if (idEditText.text.toString().trim()
                     .isEmpty() || passwordEditText.text.toString()
                     .trim()
@@ -130,11 +147,10 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            //데이터 전달
             val intent = Intent(this, LoginActivity::class.java).apply {
                 putExtra("id", idEditText.text.toString())
                 putExtra("password", passwordEditText.text.toString())
-                putExtra("nickname", nicknameEditText.text.toString())
-                putExtra("email", emailEditText.text.toString())
             }
             setResult(RESULT_OK, intent)
 
@@ -151,10 +167,10 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun isDuplicationId(): Boolean {
         val id = idEditText.text.toString().trim()
-        if (UserData.userList.containsKey(id)) {
-            return false
+        return if (UserData.userList.containsKey(id)) {
+            false
         } else {
-            return true
+            true
         }
     }
 
@@ -162,7 +178,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun isRegularPassword(): Boolean {
         val password = passwordEditText.text.toString().trim()
         val passwordPattern =
-            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@$!%*#?&.]{8,16}$"
+            "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!%*#?&.])[A-Za-z[0-9]$@$!%*#?&.]{5,12}$"
         val pattern = Pattern.matches(passwordPattern, password)
 
         return pattern
@@ -176,6 +192,17 @@ class SignUpActivity : AppCompatActivity() {
         return pattern
     }
 
+
+    private fun isDuplicationNickname(): Boolean {
+        val nickname = nicknameEditText.text.toString().trim()
+        for ((_, value) in UserData.userList) {
+            if (value.userNickName == nickname) {
+                return false
+            }
+        }
+        return true
+    }
+
     //이메일 중복
     private fun isDuplicationEmail(): Boolean {
         val email = emailEditText.text.toString()
@@ -186,5 +213,4 @@ class SignUpActivity : AppCompatActivity() {
         }
         return true
     }
-
 }
