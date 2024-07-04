@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="80dp"
     android:layout_height="100dp"
-    android:background="@color/point"
     android:gravity="center_horizontal"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginEnd="5dp">
 
     <ImageView
         android:id="@+id/profile_image"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:background="@drawable/profile_circle_shape"
-        android:backgroundTint="@color/black" />
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sample"/>
 
     <TextView
         android:id="@+id/profile_name"

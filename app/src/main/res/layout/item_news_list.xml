@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="300dp"
-    android:padding="8dp"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/corners_15dp_radius"
     android:clipToOutline="true"
-    android:background="@drawable/corners_15dp_radius">
+    android:padding="8dp">
 
     <ImageView
         android:id="@+id/iv_news_image"
