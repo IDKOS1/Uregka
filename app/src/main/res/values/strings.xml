@@ -40,4 +40,11 @@
     <string name="following_list_title">구독 중인 기자</string>
     <string name="et_search">검색</string>
     <string name="tv_new_content">새로운 기사</string>
+    <string name="tv_intro_wrong">짧은 소개를 입력해주세요.</string>
+    <string name="tv_intro_hint">짧은 소개</string>
+    <string name="tv_return_text">이미 회원이 있으신가요?</string>
+    <string name="tv_return_text_click">로그인 하러 가기</string>
+    <string name="wrong_email_address">잘못된 이메일 형식입니다.</string>
+    <string name="password_rule">5~12자, 영문자, 숫자, 특수문자를 최소 1개 포함해야 합니다.</string>
+    <string name="intro_wrong">최소 2자에서 최대 18자까지 입력해주세요.</string>
 </resources>
