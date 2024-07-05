@@ -176,11 +176,20 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+
+            //기존 데이터에 추가
+            val id = idEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+            val nickname = nicknameEditText.text.toString().trim()
+            val intro = introEditText.text.toString().trim()
+
+            val data = User(id, password, nickname, intro, "sample")
+            UserData.userList[data.userId] = data
+
             //데이터 전달
-            val intent = Intent(this, LoginActivity::class.java).apply {
-                putExtra("id", idEditText.text.toString())
-                putExtra("password", passwordEditText.text.toString())
-            }
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.putExtra("data", data)
+
             setResult(RESULT_OK, intent)
 
             if (!isFinishing) finish()

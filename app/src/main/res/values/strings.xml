@@ -23,6 +23,7 @@
     <string name="login_id_not_found">등록되지 않은 회원입니다</string>
     <string name="login_edittext_password_hint">비밀번호</string>
     <string name="login_wrong_password">올바른 비밀번호 형식이 아닙니다.</string>
+    <string name="login_different_password">비밀번호가 틀립니다.</string>
     <string name="id_password_search">아이디 / 비밀번호 찾기</string>
     <string name="login_button_text">로그인</string>
     <string name="sign_up_button_text">프로필 만들기</string>
