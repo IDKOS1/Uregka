@@ -77,22 +77,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <!--기자프로필-->
+            <!--기자 프로필-->
             <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
+                android:id="@+id/cv_reporter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:elevation="10dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 app:cardCornerRadius="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/img_main"
-                app:layout_constraintEnd_toEndOf="@id/img_main"
+                app:layout_constraintBottom_toBottomOf="@id/img_main"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/img_main">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/round_corner_retangle"
-                    android:gravity="center"
+                    android:gravity="start"
                     android:orientation="horizontal"
                     android:padding="3dp">
 
@@ -100,22 +102,25 @@
                         android:id="@+id/img_writer"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
                         android:background="@drawable/profile_circle_shape"
                         android:clipToOutline="true"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/person" />
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_user" />
 
                     <TextView
                         android:id="@+id/tv_writer_name"
                         style="@style/UserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="end"
+                        android:layout_marginEnd="5dp"
+                        android:gravity="center"
                         android:text="@string/reporter_name"/>
 
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
+
 
 
             <!--텍스트 박스-->
@@ -127,10 +132,9 @@
                 android:background="@drawable/corners_15dp_radius"
                 android:clipToOutline="true"
                 android:elevation="4dp"
-
                 android:orientation="vertical"
-                android:padding="5dp"
-                app:layout_constraintTop_toBottomOf="@id/img_main">
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/cv_reporter">
 
                 <!--제목-->
                 <TextView
@@ -159,6 +163,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="내용 정보가 없습니다."
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_more"
+                    style="@style/Sub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="더보기"
+                    android:layout_marginTop="3dp"
+                    android:gravity="end"
+                    android:ellipsize="end"
+                    android:maxLines="3"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
