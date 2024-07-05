@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,9 +58,17 @@ class MainActivity : AppCompatActivity() {
             val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image!!)
             val resourceId = resources.getIdentifier(follow.profileImg, "drawable", packageName)
             val textView = constraintLayout.findViewById<TextView>(R.id.profile_name!!)
+            val followList = constraintLayout.findViewById<LinearLayout>(R.id.ll_follow_list)
 
             imageView.setImageResource(resourceId)
             textView.text = follow.userNickName
+
+            followList.setOnClickListener {
+                val intent = Intent(this, MyPageActivity::class.java)
+                intent.putExtra("userData", follow)
+                intent.putExtra("userName", textView.text)
+                startActivity(intent)
+            }
 
             followLayout.addView(constraintLayout)
         }
