@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +27,12 @@ class LoginActivity : AppCompatActivity() {
         val idWrongText = findViewById<TextView>(R.id.tv_login_id_wrong)
         val passwordEditText = findViewById<EditText>(R.id.et_login_password)
         val passwordWrongText = findViewById<TextView>(R.id.tv_login_password_wrong)
+
+        val developerMode = findViewById<ImageView>(R.id.img_login_icon)
+        developerMode.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
         loginButton.setOnClickListener {
