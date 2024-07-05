@@ -177,7 +177,7 @@ class SignUpActivity : AppCompatActivity() {
             }
 
             //기존 데이터에 추가
-            val data = User(id, password, nickname, intro, "sample")
+            val data = User(id, password, nickname, email, 0, " ", "sample")
             UserData.userList[data.userId] = data
 
             //데이터 전달
