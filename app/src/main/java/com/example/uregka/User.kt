@@ -3,6 +3,8 @@ package com.example.uregka
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
+
+// copyTo, 기존 객체 제거 및 교체
 @Parcelize
 data class User(
     var userId: String,
@@ -27,7 +29,7 @@ object UserData {
             "MGone",
             "mgmgmg!",
             "말감지원",
-            "mzone.gmail.com",
+            "mzone@gmail.com",
             "뷁",
             "sample"
         ),
