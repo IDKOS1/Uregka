@@ -1,6 +1,7 @@
 package com.example.uregka
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -12,14 +13,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Locale
 
 class LoginActivity : AppCompatActivity() {
 
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
+
 
         val signUpButton = findViewById<Button>(R.id.btn_sign_up)
         val loginButton = findViewById<Button>(R.id.btn_login)
@@ -27,10 +32,11 @@ class LoginActivity : AppCompatActivity() {
         val idWrongText = findViewById<TextView>(R.id.tv_login_id_wrong)
         val passwordEditText = findViewById<EditText>(R.id.et_login_password)
         val passwordWrongText = findViewById<TextView>(R.id.tv_login_password_wrong)
-        val passwordButton = findViewById<TextView>(R.id.login_visibility_password)
+        val passwordButton = findViewById<ImageView>(R.id.login_visibility_password)
 
         val developerMode = findViewById<ImageView>(R.id.img_login_icon)
-        developerMode.setOnClickListener{
+
+        developerMode.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
@@ -60,7 +66,11 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (!isCheckPassword(id, password)) {
-                Toast.makeText(this, getString(R.string.login_different_password), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    getString(R.string.login_different_password),
+                    Toast.LENGTH_SHORT
+                ).show()
                 passwordWrongText.setText(getString(R.string.login_different_password))
                 passwordWrongText.visibility = View.VISIBLE
                 return@setOnClickListener
@@ -71,7 +81,8 @@ class LoginActivity : AppCompatActivity() {
                     .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
