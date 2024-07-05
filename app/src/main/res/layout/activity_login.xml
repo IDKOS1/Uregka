@@ -134,6 +134,8 @@
         android:layout_marginLeft="2dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="2dp"
+        android:textColor="@color/button"
+        android:backgroundTint="@color/white"
         android:background="@drawable/button_rounded_corner_rectangle"
         android:text="@string/sign_up_button_text"
         app:layout_constraintStart_toStartOf="parent"
