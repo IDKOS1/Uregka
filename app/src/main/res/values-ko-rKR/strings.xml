@@ -1,29 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Uregka</string>
-
     <string name="profile_title">기자 프로필</string>
-    <string name="follow_message" translatable="false">Follow</string>
-
     <string name="name">이름</string>
     <string name="rename">이름 정보가 없습니다.</string>
-
     <string name="nick_name">닉네임</string>
     <string name="nick_rename">닉네임 정보가 없습니다.</string>
-
     <string name="follower">팔로워</string>
     <string name="follower_number">팔로워 정보가 없습니다.</string>
-
     <string name="count">발행기사 수</string>
     <string name="news_count">기사 수 정보가 없습니다.</string>
-
-    <string name="email">E-mail</string>
     <string name="email_rename">이메일 정보가 없습니다.</string>
-    <string name="login_screen_icon" translatable="false">login screen icon</string>
     <string name="login_edittext_hint">아이디</string>
     <string name="login_id_not_found">등록되지 않은 회원입니다</string>
     <string name="login_edittext_password_hint">비밀번호</string>
     <string name="login_wrong_password">올바른 비밀번호 형식이 아닙니다.</string>
-    <string name="login_different_password">비밀번호가 틀립니다.</string>
+    <string name="login_different_password">비밀번호가 틀립니다</string>
     <string name="login_empty_check">아이디/비밀번호를 입력해주세요.</string>
     <string name="id_password_search">아이디 / 비밀번호 찾기</string>
     <string name="login_button_text">로그인</string>
@@ -38,12 +29,7 @@
     <string name="sign_up_id_wrong">이미 등록된 아이디 입니다.</string>
     <string name="sign_up_missing_data_wrong">입력되지 않은 정보가 있습니다.</string>
     <string name="sign_up_Invalid_input">유효하지 않은 입력이 있습니다.</string>
-
-
-    <string name="reporter_name" translatable="false">reporter</string>
     <string name="news">(기사 내용이 없습니다.)</string>
-    <string name="date" translatable="false">2024-07-03</string>
-
     <string name="following_list_title">구독 중인 기자</string>
     <string name="et_search">검색</string>
     <string name="tv_new_content">새로운 기사</string>
