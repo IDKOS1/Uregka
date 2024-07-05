@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_news"
     android:layout_width="match_parent"
     android:layout_height="300dp"
     android:layout_marginBottom="20dp"
+    android:elevation="3dp"
     android:background="@drawable/corners_15dp_radius"
     android:clipToOutline="true"
     android:padding="8dp">
@@ -13,7 +16,7 @@
         android:id="@+id/iv_news_image"
         android:layout_width="match_parent"
         android:layout_height="190dp"
-        android:src="@drawable/news_img"
+        android:src="@drawable/news"
         android:scaleType="fitXY"
         android:clipToOutline="true"
         android:background="@drawable/corners_10dp_radius"
@@ -32,12 +35,14 @@
         android:text="@string/date"/>
 
     <TextView
-        android:id="@+id/tv_news"
+        android:id="@+id/tv_article_title"
         style="@style/ArticleTitle"
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:text="@string/news"
         android:gravity="center_vertical"
+        android:maxLines="2"
+        android:ellipsize="end"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/frame" />
@@ -59,11 +64,11 @@
             android:layout_marginBottom="10dp">
 
             <LinearLayout
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/round_corner_retangle"
-                android:elevation="10dp"
                 android:gravity="center"
+                android:minWidth="150dp"
                 android:orientation="horizontal"
                 android:padding="3dp"
                 android:translationZ="10dp">
@@ -71,16 +76,18 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_marginEnd="5dp"
                     android:background="@drawable/profile_circle_shape"
                     android:clipToOutline="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/person" />
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user" />
 
                 <TextView
+                    android:id="@+id/tv_writer_name"
                     style="@style/UserName"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="end"
+                    android:gravity="center"
                     android:text="@string/reporter_name"/>
 
             </LinearLayout>

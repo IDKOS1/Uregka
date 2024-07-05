@@ -1,11 +1,15 @@
 package com.example.uregka
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,9 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         makeFollowList()
         makeNewsList()
-
-
-
     }
 
     private fun makeFollowList() {
@@ -29,9 +30,8 @@ class MainActivity : AppCompatActivity() {
             val constraintLayout =
                 layoutInflater.inflate(style, followLayout, false)
 
-            follow.profileImg = "sample"
             val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image!!)
-            val resourceId = resources.getIdentifier(follow.profileImg, "drawable",packageName)
+            val resourceId = resources.getIdentifier(follow.profileImg, "drawable", packageName)
             val textView = constraintLayout.findViewById<TextView>(R.id.profile_name!!)
 
             imageView.setImageResource(resourceId)
@@ -45,11 +45,46 @@ class MainActivity : AppCompatActivity() {
         // 뉴스 메인 피드 생성
         val style = R.layout.item_news_list
         val newsLayout = findViewById<LinearLayout>(R.id.ll_content)
-        repeat(5) {
-            val constraintLayout =
+
+        for(article in UserData.articleList) {
+            val layout =
                 layoutInflater.inflate(style, newsLayout, false)
 
-            newsLayout.addView(constraintLayout)
+            // 기사 이미지 설정
+            val imageView = layout.findViewById<ImageView>(R.id.iv_news_image)
+            val resourceId = resources.getIdentifier(article.mainImg, "drawable", packageName)
+            imageView.setImageResource(resourceId)
+
+            // 기사 작성자 설정
+            val writerText = layout.findViewById<TextView>(R.id.tv_writer_name)
+            val writer = article.writerId
+            writerText.text = writer
+
+            // 기사 제목 설정
+            val articleTitle = layout.findViewById<TextView>(R.id.tv_article_title)
+            val title = article.title
+            articleTitle.text = title
+
+            // 기사 작성 일자 설정
+            val writeDate = layout.findViewById<TextView>(R.id.tv_date)
+            val date = article.writeDate
+            writeDate.text = date
+
+            // 클릭 리스너 설정
+            val newsFeed = layout.findViewById<ConstraintLayout>(R.id.cl_news)
+            newsFeed.setOnClickListener{
+                Log.i("info", "리니어 클릭")
+                val intent = Intent(this, DetailViewActivity::class.java)
+                intent.putExtra("articleData", article)
+                startActivity(intent)
+            }
+
+            newsLayout.addView(layout)
         }
     }
 }
+
+
+
+
+

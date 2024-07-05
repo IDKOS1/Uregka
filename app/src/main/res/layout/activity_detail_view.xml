@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:layout_marginTop="25dp"
     android:background="@color/main"
-    tools:context=".DetailViewActivity"
-    >
+    tools:context=".DetailViewActivity">
 
 
     <View
@@ -79,23 +78,44 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <!--기자프로필-->
-            <FrameLayout
-                android:id="@+id/fl_name"
-                android:layout_width="200dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@id/textbox"
-                app:layout_constraintEnd_toEndOf="parent">
+                android:layout_marginEnd="16dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/img_main"
+                app:layout_constraintEnd_toEndOf="@id/img_main"
+                app:layout_constraintTop_toBottomOf="@id/img_main">
 
-                <Button
-                    android:id="@+id/btn_name"
-                    style="@style/UserName"
-                    android:layout_width="200dp"
-                    android:layout_height="50dp"
-                    android:backgroundTint="@color/white"
-                    android:elevation="10dp"
-                    android:text="@string/reporter_name" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_corner_retangle"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="3dp">
 
-            </FrameLayout>
+                    <ImageView
+                        android:id="@+id/img_writer"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/profile_circle_shape"
+                        android:clipToOutline="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/person" />
+
+                    <TextView
+                        android:id="@+id/tv_writer_name"
+                        style="@style/UserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text="@string/reporter_name"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
 
 
             <!--텍스트 박스-->
@@ -118,7 +138,7 @@
                     style="@style/UserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="안녕하세여"
+                    android:text="제목 정보가 없습니다."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -129,23 +149,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:text="24-05-05"
+                    android:text="날짜 정보가 없습니다."
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <!--본문-->
                 <TextView
-                    android:id="@+id/tv_maintext"
+                    android:id="@+id/tv_content"
                     style="@style/Default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하
-                    세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여
-                    안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕하세여안녕 "
+                    android:text="내용 정보가 없습니다."
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
