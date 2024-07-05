@@ -1,12 +1,10 @@
 package com.example.uregka
 
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.core.content.ContextCompat
 
 class MyPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,11 +13,36 @@ class MyPageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_my_page)
 
         val followButton = findViewById<TextView>(R.id.tv_follow)
+        val id = findViewById<TextView>(R.id.tv_id_rename)
+        val nickName = findViewById<TextView>(R.id.tv__nick_rename)
+        val follow = findViewById<TextView>(R.id.tv_followers_renames)
+        val intro = findViewById<TextView>(R.id.tv_intro_contents)
+        val email = findViewById<TextView>(R.id.tv_email_rename)
+
+        val user = intent.getParcelableExtra("userData", User::class.java)
+        val userName = intent.getStringExtra("userName")
+
+        if (user != null) {
+            if (userName.toString() in user.userNickName) {
+                id.text = user.userId
+                nickName.text = user.userNickName
+                follow.text = user.follower.toString()
+                intro.text = user.userIntro
+                email.text = user.userEmail
+            }
+        }
+
 
         followButton.setOnClickListener {
             when (followButton.text) {
-                "Follow" -> followButton.text = "Unfollow"
-                "Unfollow" -> followButton.text = "Follow"
+                "Follow" -> {
+                    followButton.text = "Unfollow"
+                    followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.point))
+                }
+                "Unfollow" -> {
+                    followButton.text = "Follow"
+                    followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.point))
+                }
             }
         }
 

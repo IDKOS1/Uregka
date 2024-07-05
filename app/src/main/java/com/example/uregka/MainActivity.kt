@@ -37,6 +37,13 @@ class MainActivity : AppCompatActivity() {
             imageView.setImageResource(resourceId)
             textView.text = follow.userNickName
 
+            followLayout.setOnClickListener {
+                val intent = Intent(this, MyPageActivity::class.java)
+                intent.putExtra("userData", follow)
+                intent.putExtra("userName", textView.text)
+                startActivity(intent)
+            }
+
             followLayout.addView(constraintLayout)
         }
     }
