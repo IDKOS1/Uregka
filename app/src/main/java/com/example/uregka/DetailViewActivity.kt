@@ -20,7 +20,7 @@ class DetailViewActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.tv_title)
         val content = findViewById<TextView>(R.id.tv_content)
         val date = findViewById<TextView>(R.id.tv_date)
-
+        var isExpanded = false
 
         if (article != null) {
             val writerUser: User? = UserData.userList[article.writerId]
@@ -35,6 +35,24 @@ class DetailViewActivity : AppCompatActivity() {
                 title.text = article.title
                 content.text = article.content
                 date.text = article.writeDate
+            }
+        }
+
+        val backBtn = findViewById<ImageView>(R.id.img_back)
+        val showBtn = findViewById<TextView>(R.id.tv_more)
+
+        backBtn.setOnClickListener {
+            finish()
+        }
+
+        showBtn.setOnClickListener {
+            isExpanded = !isExpanded
+            if(isExpanded) {
+                content.maxLines = Int.MAX_VALUE
+                showBtn.text = "닫기"
+            } else {
+                content.maxLines = 3
+                showBtn.text = "더보기"
             }
         }
     }
