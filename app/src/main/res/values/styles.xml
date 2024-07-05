@@ -35,7 +35,7 @@
     </style>
 
     <style name="SignUpTest">
-        <item name="android:textColor">#FF0000</item>
+        <item name="android:textColor">@color/wrong</item>
         <item name="android:textSize">14sp</item>
     </style>
 
