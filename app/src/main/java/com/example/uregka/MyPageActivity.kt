@@ -32,7 +32,6 @@ class MyPageActivity : AppCompatActivity() {
             }
         }
 
-
         followButton.setOnClickListener {
 
             var followCount = follow.text.toString().toInt()
@@ -52,6 +51,5 @@ class MyPageActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }
