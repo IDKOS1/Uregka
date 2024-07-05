@@ -41,7 +41,7 @@ object UserData {
             "jd1234!",
             "JohnD",
             "john.doe@example.com",
-            1634
+            1634,
             "Love coding and coffee!",
             "sample"
         ),
