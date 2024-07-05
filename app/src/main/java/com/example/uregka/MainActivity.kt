@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         val style = R.layout.item_news_list
         val newsLayout = findViewById<LinearLayout>(R.id.ll_content)
 
-        for(article in UserData.articleList) {
+        for(article in ArticleList.articleList) {
             val layout =
                 layoutInflater.inflate(style, newsLayout, false)
 
