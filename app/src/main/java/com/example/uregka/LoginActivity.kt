@@ -39,10 +39,18 @@ class LoginActivity : AppCompatActivity() {
 
             val password = passwordEditText.text.toString().trim()
             if (!isRegularPassword(password)) {
+                passwordWrongText.setText(getString(R.string.login_wrong_password))
                 passwordWrongText.visibility = View.VISIBLE
                 return@setOnClickListener
             } else {
                 passwordWrongText.visibility = View.INVISIBLE
+            }
+
+            if (!isCheckPassword(id, password)) {
+                Toast.makeText(this, getString(R.string.login_different_password), Toast.LENGTH_SHORT).show()
+                passwordWrongText.setText(getString(R.string.login_different_password))
+                passwordWrongText.visibility = View.VISIBLE
+                return@setOnClickListener
             }
 
 
@@ -50,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
                     .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, "아이디/비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -63,10 +71,9 @@ class LoginActivity : AppCompatActivity() {
         activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
                 if (it.resultCode == RESULT_OK) {
-                    val user_id = it.data?.getStringExtra("id") ?: ""
-                    val user_password = it.data?.getStringExtra("password") ?: ""
-                    idEditText.setText(user_id)
-                    passwordEditText.setText(user_password)
+                    val data: User? = it.data?.getParcelableExtra("data")
+                    idEditText.setText(data?.userId)
+                    passwordEditText.setText(data?.userPassword)
                 }
             }
 

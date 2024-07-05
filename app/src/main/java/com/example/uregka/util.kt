@@ -4,9 +4,9 @@ import java.util.regex.Pattern
 
 //아이디 중복 체크
 fun isDuplicationId(id: String): Boolean {
-    return if (UserData.userList.containsKey(id)){
+    return if (UserData.userList.containsKey(id)) {
         false
-    }else{
+    } else {
         true
     }
 }
@@ -18,6 +18,10 @@ fun isRegularPassword(password: String): Boolean {
     val pattern = Pattern.matches(passwordPattern, password)
 
     return pattern
+}
+
+fun isCheckPassword(id: String, password: String): Boolean {
+    return UserData.userList[id]?.userPassword == password
 }
 
 //이메일 유효성

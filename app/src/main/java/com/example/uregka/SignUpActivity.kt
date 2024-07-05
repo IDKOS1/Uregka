@@ -149,38 +149,40 @@ class SignUpActivity : AppCompatActivity() {
         //회원 가입 버튼
         signUpButton.setOnClickListener {
 
+            val id = idEditText.text.toString().trim()
+            val password = passwordEditText.text.toString().trim()
+            val email = emailEditText.text.toString().trim()
+            val nickname = nicknameEditText.text.toString().trim()
+            val intro = introEditText.text.toString().trim()
+
             // 비었을 때
-            if (idEditText.text.toString().trim()
-                    .isEmpty() || passwordEditText.text.toString()
-                    .trim()
-                    .isEmpty() || nicknameEditText.text.toString()
-                    .isEmpty() || emailEditText.text.toString()
-                    .isEmpty()
+            if (id.isEmpty() || password.isEmpty() || nickname.isEmpty() || email.isEmpty() || intro.isEmpty()
             ) {
-                Toast.makeText(this, "입력되지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_up_missing_data_wrong), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             //유효한 입력 체크
             if (!isId || !isPassword || !isNickname || !isEmail || !isIntro) {
-                Toast.makeText(this, "유효하지 않은 입력이 있습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_up_Invalid_input), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             //이메일 중복 체크
-            val email = emailEditText.text.toString()
             if (!isDuplicationEmail(email)) {
-                emailWrongTextView.setText("이미 등록된 이메일 입니다.")
+                emailWrongTextView.setText(getString(R.string.sign_up_email_wrong))
                 emailWrongTextView.visibility = View.VISIBLE
-                Toast.makeText(this, "이미 등록된 이메일 입니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_up_email_wrong), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            //기존 데이터에 추가
+            val data = User(id, password, nickname, intro, "sample")
+            UserData.userList[data.userId] = data
+
             //데이터 전달
-            val intent = Intent(this, LoginActivity::class.java).apply {
-                putExtra("id", idEditText.text.toString())
-                putExtra("password", passwordEditText.text.toString())
-            }
+            val intent = Intent(this, LoginActivity::class.java)
+            intent.putExtra("data", data)
             setResult(RESULT_OK, intent)
 
             if (!isFinishing) finish()
