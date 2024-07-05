@@ -34,7 +34,13 @@ class LoginActivity : AppCompatActivity() {
         val idWrongText = findViewById<TextView>(R.id.tv_login_id_wrong)
         val passwordEditText = findViewById<EditText>(R.id.et_login_password)
         val passwordWrongText = findViewById<TextView>(R.id.tv_login_password_wrong)
-        val passwordButton = findViewById<ImageView>(R.id.login_visibility_password)
+        val passwordButton = findViewById<TextView>(R.id.login_visibility_password)
+
+        val developerMode = findViewById<ImageView>(R.id.img_login_icon)
+        developerMode.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         var isPasswordVisibility = false
 
@@ -61,11 +67,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (!isCheckPassword(id, password)) {
-                Toast.makeText(
-                    this,
-                    getString(R.string.login_different_password),
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast.makeText(this, getString(R.string.login_different_password), Toast.LENGTH_SHORT).show()
                 passwordWrongText.setText(getString(R.string.login_different_password))
                 passwordWrongText.visibility = View.VISIBLE
                 return@setOnClickListener
@@ -76,12 +78,9 @@ class LoginActivity : AppCompatActivity() {
                     .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-
-            Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("id", idEditText.text.toString())

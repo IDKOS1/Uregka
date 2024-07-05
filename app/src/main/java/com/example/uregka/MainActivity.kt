@@ -7,9 +7,11 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,30 @@ class MainActivity : AppCompatActivity() {
 
         makeFollowList()
         makeNewsList()
+
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    showToast("현재 화면 입니다.")
+                    true
+                }
+                R.id.reporter -> {
+                    val intent = Intent(this, FollowingListActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.my_page -> {
+                    val intent = Intent(this, MyPageActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> {
+                    showToast("구현 예정")
+                    true
+                }
+            }
+        }
     }
 
     private fun makeFollowList() {
@@ -46,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         val style = R.layout.item_news_list
         val newsLayout = findViewById<LinearLayout>(R.id.ll_content)
 
-        for(article in ArticleList.articleList) {
+        for (article in ArticleList.articleList) {
             val layout =
                 layoutInflater.inflate(style, newsLayout, false)
 
@@ -72,7 +98,7 @@ class MainActivity : AppCompatActivity() {
 
             // 클릭 리스너 설정
             val newsFeed = layout.findViewById<ConstraintLayout>(R.id.cl_news)
-            newsFeed.setOnClickListener{
+            newsFeed.setOnClickListener {
                 Log.i("info", "리니어 클릭")
                 val intent = Intent(this, DetailViewActivity::class.java)
                 intent.putExtra("articleData", article)
@@ -81,6 +107,10 @@ class MainActivity : AppCompatActivity() {
 
             newsLayout.addView(layout)
         }
+    }
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
 
