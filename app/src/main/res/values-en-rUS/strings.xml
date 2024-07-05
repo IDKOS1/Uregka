@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_title">Reporter Profile</string>
+    <string name="name">Name</string>
+    <string name="rename">No name information available</string>
+    <string name="nick_name">Nickname</string>
+    <string name="nick_rename">No nickname information available.</string>
+    <string name="follower">Follower</string>
+    <string name="follower_number">No follower information available.</string>
+    <string name="count">Number of Published Articles</string>
+    <string name="news_count">No article count information available.</string>
+    <string name="email_rename">No email information available.</string>
+    <string name="login_edittext_hint">Username</string>
+    <string name="login_id_not_found">The user is not registered.</string>
+    <string name="login_edittext_password_hint">Password</string>
+    <string name="login_wrong_password">The password format is incorrect.</string>
+    <string name="login_different_password">The password is incorrect.</string>
+    <string name="login_empty_check">Please enter your username/password.</string>
+    <string name="id_password_search">Find Username / Password</string>
+    <string name="login_button_text">Login</string>
+    <string name="login_success">Login Successful</string>
+    <string name="sign_up_success">Profile Registration Successful</string>
+    <string name="sign_up_button_text">Create Profile</string>
+    <string name="sign_up_nick_name_hint">Nickname</string>
+    <string name="sign_up_nick_name_wrong">The nickname is already registered.</string>
+    <string name="sign_up_email_hint">Email</string>
+    <string name="sign_up_email_wrong">The email is already registered.</string>
+    <string name="sign_up_complete_button_text">Sign Up</string>
+    <string name="sign_up_id_wrong">The username is already registered.</string>
+    <string name="sign_up_missing_data_wrong">Some information is missing.</string>
+    <string name="sign_up_Invalid_input">There is invalid input.</string>
+    <string name="news">(No article content available.)</string>
+    <string name="following_list_title">Subscribed Journalists</string>
+    <string name="et_search">Search</string>
+    <string name="tv_new_content">New Article</string>
+    <string name="tv_intro_wrong">Please enter a short introduction.</string>
+    <string name="tv_intro_hint">Short Introduction</string>
+    <string name="tv_return_text">Already a member?</string>
+    <string name="tv_return_text_click">Go to Login</string>
+    <string name="wrong_email_address">Invalid email format.</string>
+    <string name="password_rule">Must be 5-12 characters, with at least one letter, one number, and one special character.</string>
+    <string name="intro_wrong">Please enter between 2 and 18 characters.</string>
+</resources>
