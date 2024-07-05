@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -112,8 +113,21 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            val user = UserData.userList[writer]
+            val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
+            cv_reporter.setOnClickListener{
+                Log.i("cv_reporter", "$user")
+                val intent = Intent(this, MyPageActivity::class.java)
+                intent.putExtra("userId", user?.userId)
+                startActivity(intent)
+
+            }
+
+
+
             newsLayout.addView(layout)
         }
+
     }
 
     private fun showToast(message: String) {
