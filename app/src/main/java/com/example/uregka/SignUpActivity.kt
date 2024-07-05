@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -40,12 +41,19 @@ class SignUpActivity : AppCompatActivity() {
         introWrongTextView = findViewById(R.id.tv_sign_up_intro_wrong)
         val signUpButton = findViewById<Button>(R.id.btn_sign_up_complete)
         val returnClickTextView = findViewById<TextView>(R.id.tv_return_click)
+        val passwordButton = findViewById<ImageView>(R.id.sign_up_visibility_password)
 
         var isId = false
         var isPassword = false
         var isNickname = false
         var isEmail = false
         var isIntro = false
+
+        var isPasswordVisibility = false
+
+        passwordButton.setOnClickListener {
+            isPasswordVisibility = passwordToggle(isPasswordVisibility, passwordEditText)
+        }
 
         //아이디 입력
         idEditText.addTextChangedListener(object : TextWatcher {
@@ -158,13 +166,18 @@ class SignUpActivity : AppCompatActivity() {
             // 비었을 때
             if (id.isEmpty() || password.isEmpty() || nickname.isEmpty() || email.isEmpty() || intro.isEmpty()
             ) {
-                Toast.makeText(this, getString(R.string.sign_up_missing_data_wrong), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    getString(R.string.sign_up_missing_data_wrong),
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
 
             //유효한 입력 체크
             if (!isId || !isPassword || !isNickname || !isEmail || !isIntro) {
-                Toast.makeText(this, getString(R.string.sign_up_Invalid_input), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_up_Invalid_input), Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
@@ -172,18 +185,22 @@ class SignUpActivity : AppCompatActivity() {
             if (!isDuplicationEmail(email)) {
                 emailWrongTextView.setText(getString(R.string.sign_up_email_wrong))
                 emailWrongTextView.visibility = View.VISIBLE
-                Toast.makeText(this, getString(R.string.sign_up_email_wrong), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.sign_up_email_wrong), Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
 
             //기존 데이터에 추가
-            val data = User(id, password, nickname, intro, "sample")
+            val data = User(id, password, nickname, email, 0, intro, "sample")
             UserData.userList[data.userId] = data
 
             //데이터 전달
             val intent = Intent(this, LoginActivity::class.java)
             intent.putExtra("data", data)
             setResult(RESULT_OK, intent)
+
+            Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show()
+
 
             if (!isFinishing) finish()
 

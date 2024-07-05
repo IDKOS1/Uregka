@@ -11,7 +11,7 @@ data class User(
     var userPassword: String,
     var userNickName: String,
     var userEmail: String,
-    var follower: Int,
+    var follower: Int = 0,
     var userIntro: String = "",
     var profileImg: String = ""
 ) : Parcelable
