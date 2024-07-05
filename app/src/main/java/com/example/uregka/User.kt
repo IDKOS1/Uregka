@@ -11,6 +11,7 @@ data class User(
     var userPassword: String,
     var userNickName: String,
     var userEmail: String,
+    var follower: Int,
     var userIntro: String = "",
     var profileImg: String = ""
 ) : Parcelable
@@ -22,6 +23,7 @@ object UserData {
             "a1b2c3d4!",
             "강아지맛쥬스",
             "kss3736@naver.com",
+            8813,
             "안드로이드 어려워요",
             "sample"
         ),
@@ -30,6 +32,7 @@ object UserData {
             "mgmgmg!",
             "말감지원",
             "mzone@gmail.com",
+            7212,
             "뷁",
             "sample"
         ),
@@ -38,6 +41,7 @@ object UserData {
             "jd1234!",
             "JohnD",
             "john.doe@example.com",
+            1634
             "Love coding and coffee!",
             "sample"
         ),
@@ -46,6 +50,7 @@ object UserData {
             "js5678!",
             "JaneS",
             "jane.smith@example.com",
+            26,
             "Traveller and foodie.",
             "sample"
         ),
@@ -54,6 +59,7 @@ object UserData {
             "cb91011!",
             "CharlieB",
             "charlie.brown@example.com",
+            561,
             "Peanuts fan.",
             "sample"
         ),
@@ -62,6 +68,7 @@ object UserData {
             "aj1213!",
             "AliceJ",
             "alice.johnson@example.com",
+            71,
             "Book lover and writer.",
             "sample"
         ),
@@ -70,6 +77,7 @@ object UserData {
             "mw1415!",
             "MichaelW",
             "michael.white@example.com",
+            952,
             "Fitness enthusiast.",
             "sample"
         ),
@@ -78,6 +86,7 @@ object UserData {
             "sc1617!",
             "SarahC",
             "sarah.connor@example.com",
+            196,
             "Tech geek and movie buff.",
             "sample"
         ),
@@ -86,6 +95,7 @@ object UserData {
             "dm1819!",
             "DavidM",
             "david.miller@example.com",
+            79,
             "Music and arts.",
             "sample"
         ),
@@ -94,6 +104,7 @@ object UserData {
             "ec2021!",
             "EmilyC",
             "emily.clark@example.com",
+            2,
             "Nature lover.",
             "sample"
         ),
@@ -102,6 +113,7 @@ object UserData {
             "dl2223!",
             "DanielL",
             "daniel.lewis@example.com",
+            81,
             "Gamer and streamer.",
             "sample"
         ),
