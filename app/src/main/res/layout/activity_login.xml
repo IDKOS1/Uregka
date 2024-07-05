@@ -15,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/logo"
         android:contentDescription="@string/login_screen_icon"
+        android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,25 +31,25 @@
         android:layout_marginEnd="2dp"
         android:autofillHints="username"
         android:background="@drawable/edittext_rounded_corner_rectangle"
+        android:drawableLeft="@drawable/icm_user_resize"
+        android:drawablePadding="20dp"
         android:elevation="3dp"
         android:hint="@string/login_edittext_hint"
         android:inputType="text"
-        android:drawableLeft="@drawable/icm_user_resize"
-        android:drawablePadding="20dp"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_login_icon" />
 
     <TextView
-        android:id="@+id/tv_id_not_found"
+        android:id="@+id/tv_login_id_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
         android:text="@string/login_id_not_found"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_login_id" />
@@ -64,25 +64,25 @@
         android:layout_marginRight="2dp"
         android:autofillHints="password"
         android:background="@drawable/edittext_rounded_corner_rectangle"
+        android:drawableLeft="@drawable/icm_pw_resize"
+        android:drawablePadding="30dp"
         android:elevation="3dp"
         android:hint="@string/login_edittext_password_hint"
         android:inputType="textPassword"
-        android:drawableLeft="@drawable/icm_pw_resize"
-        android:drawablePadding="30dp"
         android:paddingStart="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_id_not_found" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_id_wrong" />
 
     <TextView
-        android:id="@+id/tv_password_wrong"
+        android:id="@+id/tv_login_password_wrong"
         style="@style/SignUpTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
         android:text="@string/login_wrong_password"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_login_password" />
@@ -95,7 +95,7 @@
         android:layout_marginTop="20dp"
         android:text="@string/id_password_search"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@+id/tv_password_wrong"
+        app:layout_constraintTop_toBottomOf="@+id/tv_login_password_wrong"
         tools:layout_editor_absoluteX="14dp" />
 
     <android.widget.Button
@@ -117,8 +117,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginRight="2dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="2dp"
         android:background="@drawable/button_rounded_corner_rectangle"
         android:text="@string/sign_up_button_text"
         app:layout_constraintStart_toStartOf="parent"
