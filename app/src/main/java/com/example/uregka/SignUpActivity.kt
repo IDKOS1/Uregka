@@ -7,6 +7,7 @@ import android.text.TextWatcher
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -40,12 +41,19 @@ class SignUpActivity : AppCompatActivity() {
         introWrongTextView = findViewById(R.id.tv_sign_up_intro_wrong)
         val signUpButton = findViewById<Button>(R.id.btn_sign_up_complete)
         val returnClickTextView = findViewById<TextView>(R.id.tv_return_click)
+        val passwordButton = findViewById<ImageView>(R.id.sign_up_visibility_password)
 
         var isId = false
         var isPassword = false
         var isNickname = false
         var isEmail = false
         var isIntro = false
+
+        var isPasswordVisibility = false
+
+        passwordButton.setOnClickListener {
+            isPasswordVisibility = passwordToggle(isPasswordVisibility, passwordEditText)
+        }
 
         //아이디 입력
         idEditText.addTextChangedListener(object : TextWatcher {
@@ -184,6 +192,9 @@ class SignUpActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             intent.putExtra("data", data)
             setResult(RESULT_OK, intent)
+
+            Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show()
+
 
             if (!isFinishing) finish()
 
