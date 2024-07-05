@@ -58,7 +58,7 @@ class LoginActivity : AppCompatActivity() {
                     .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, "아이디/비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 

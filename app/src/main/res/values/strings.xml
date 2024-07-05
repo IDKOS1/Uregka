@@ -24,6 +24,7 @@
     <string name="login_edittext_password_hint">비밀번호</string>
     <string name="login_wrong_password">올바른 비밀번호 형식이 아닙니다.</string>
     <string name="login_different_password">비밀번호가 틀립니다.</string>
+    <string name="login_empty_check">아이디/비밀번호를 입력해주세요.</string>
     <string name="id_password_search">아이디 / 비밀번호 찾기</string>
     <string name="login_button_text">로그인</string>
     <string name="sign_up_button_text">프로필 만들기</string>
@@ -33,6 +34,9 @@
     <string name="sign_up_email_wrong">이미 등록된 이메일 입니다.</string>
     <string name="sign_up_complete_button_text">회원 가입</string>
     <string name="sign_up_id_wrong">이미 등록된 아이디 입니다.</string>
+    <string name="sign_up_missing_data_wrong">입력되지 않은 정보가 있습니다.</string>
+    <string name="sign_up_Invalid_input">유효하지 않은 입력이 있습니다.</string>
+
 
     <string name="reporter_name">(기자 이름)</string>
     <string name="news">(기사 내용이 없습니다.)</string>
