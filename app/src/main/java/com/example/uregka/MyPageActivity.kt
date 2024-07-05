@@ -34,14 +34,21 @@ class MyPageActivity : AppCompatActivity() {
 
 
         followButton.setOnClickListener {
+
+            var followCount = follow.text.toString().toInt()
+
             when (followButton.text) {
                 "Follow" -> {
                     followButton.text = "Unfollow"
-                    followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.point))
+                    followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.wrong))
+                    followCount++
+                    follow.text = followCount.toString()
                 }
                 "Unfollow" -> {
                     followButton.text = "Follow"
                     followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.point))
+                    followCount--
+                    follow.text = followCount.toString()
                 }
             }
         }
