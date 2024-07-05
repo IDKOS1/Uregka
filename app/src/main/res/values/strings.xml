@@ -16,7 +16,7 @@
     <string name="count">발행기사 수</string>
     <string name="news_count">기사 수 정보가 없습니다.</string>
 
-    <string name="email">E-mail</string>
+    <string name="email" translatable="false">E-mail</string>
     <string name="email_rename">이메일 정보가 없습니다.</string>
     <string name="login_screen_icon" translatable="false">login screen icon</string>
     <string name="login_edittext_hint">아이디</string>

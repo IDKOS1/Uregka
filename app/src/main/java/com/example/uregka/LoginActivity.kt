@@ -1,6 +1,7 @@
 package com.example.uregka
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -12,14 +13,20 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import java.util.Locale
 
 class LoginActivity : AppCompatActivity() {
 
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
+
+
 
         val signUpButton = findViewById<Button>(R.id.btn_sign_up)
         val loginButton = findViewById<Button>(R.id.btn_login)
