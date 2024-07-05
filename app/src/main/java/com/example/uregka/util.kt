@@ -1,5 +1,7 @@
 package com.example.uregka
 
+import android.text.InputType
+import android.widget.EditText
 import java.util.regex.Pattern
 
 //아이디 중복 체크
@@ -56,4 +58,21 @@ fun isRegularIntro(intro: String): Boolean {
     val introPattern = "^[A-Za-z0-9가-힣ㄱ-ㅎㅏ-ㅣ\$@!%*#?&.]{2,18}$"
     val pattern = Pattern.matches(introPattern, intro)
     return pattern
+}
+
+//비밀번호 토클 버튼
+fun passwordToggle(
+    isPasswordVisibility: Boolean,
+    passwordEditText: EditText,
+): Boolean {
+    if (isPasswordVisibility) {
+        passwordEditText.inputType =
+            InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        passwordEditText.setSelection(passwordEditText.text.length)
+        return false
+    } else {
+        passwordEditText.inputType = InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+        passwordEditText.setSelection(passwordEditText.text.length)
+        return true
+    }
 }

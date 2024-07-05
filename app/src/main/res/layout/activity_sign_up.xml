@@ -77,6 +77,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_sign_up_id_wrong" />
 
+    <ImageView
+        android:id="@+id/sign_up_visibility_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/icm_secret_resize"
+        android:clickable="true"
+        android:translationZ="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_sign_up_password"
+        app:layout_constraintEnd_toEndOf="@+id/et_sign_up_password"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="@+id/et_sign_up_password"
+        app:layout_constraintTop_toTopOf="@+id/et_sign_up_password"
+        app:layout_constraintVertical_bias="0.5" />
+
     <TextView
         android:id="@+id/tv_sgin_up_password_wrong"
         style="@style/SignUpTest"

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -26,7 +27,13 @@ class LoginActivity : AppCompatActivity() {
         val idWrongText = findViewById<TextView>(R.id.tv_login_id_wrong)
         val passwordEditText = findViewById<EditText>(R.id.et_login_password)
         val passwordWrongText = findViewById<TextView>(R.id.tv_login_password_wrong)
+        val passwordButton = findViewById<ImageView>(R.id.login_visibility_password)
 
+        var isPasswordVisibility = false
+
+        passwordButton.setOnClickListener {
+            isPasswordVisibility = passwordToggle(isPasswordVisibility, passwordEditText)
+        }
 
         loginButton.setOnClickListener {
             val id = idEditText.text.toString().trim()
@@ -47,7 +54,11 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (!isCheckPassword(id, password)) {
-                Toast.makeText(this, getString(R.string.login_different_password), Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    getString(R.string.login_different_password),
+                    Toast.LENGTH_SHORT
+                ).show()
                 passwordWrongText.setText(getString(R.string.login_different_password))
                 passwordWrongText.visibility = View.VISIBLE
                 return@setOnClickListener
@@ -58,9 +69,12 @@ class LoginActivity : AppCompatActivity() {
                     .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT)
+                    .show()
                 return@setOnClickListener
             }
+
+            Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, MainActivity::class.java)
             intent.putExtra("id", idEditText.text.toString())
