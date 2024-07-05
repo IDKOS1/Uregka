@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 기자 프로필 / 메인페이지 / 아이콘 / 로그인 페이지글자 -->
+    <!-- (수정) 글자 흰색으로 하면 기사 글자가 안보임 -->
+    <color name="black">#FFFFFFFF</color>
+
+    <color name="white">#AFAFAF</color>
+
+    <!-- 로그인, 메인페이지 및 기사 페이지 background -->
+    <color name="main">#4B4B4B</color>
+
+    <!-- 로그인 및 회원가입 입력 칸 -->
+    <color name="sub">#AFAFAF</color>
+
+    <!-- 아이디/비밀번호 찾기 버튼 / 이미회원이 있으신가요? 글자 / 더보기 등등 -->
+    <color name="icon">#FFFFFFFF</color>
+
+
+    <color name="point">#4068FF</color>
+
+</resources>
