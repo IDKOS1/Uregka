@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.reporter -> {
                     val intent = Intent(this, FollowingListActivity::class.java)
                     startActivity(intent)
+
                     true
                 }
 
@@ -74,11 +75,10 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("userData", follow)
                 intent.putExtra("userName", textView.text)
 
-                val options: ActivityOptions =
-                    ActivityOptions.makeSceneTransitionAnimation(
-                        this,
-                        Pair(imageView, "profileTransition")
-                    )
+                val options: ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
+                    this,
+                    Pair(imageView, "profileTransition"),
+                )
                 startActivity(intent, options.toBundle())
             }
 
@@ -125,7 +125,9 @@ class MainActivity : AppCompatActivity() {
                 val options: ActivityOptions =
                     ActivityOptions.makeSceneTransitionAnimation(
                         this,
-                        Pair(imageView, "imageTransition")
+                        Pair(imageView, "imageTransition"),
+                        Pair(writerText, "textTransition")
+
                     )
                 startActivity(intent, options.toBundle())
             }
@@ -136,6 +138,7 @@ class MainActivity : AppCompatActivity() {
                 Log.i("cv_reporter", "$user")
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userId", user?.userId)
+                startActivity(intent)
 
             }
 
