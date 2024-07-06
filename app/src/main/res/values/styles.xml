@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActivityTransitions">true</item>
+    </style>
+
+
     <!-- TextView 스타일 정의 -->
     <style name="TitleText">
         <item name="android:textColor">@color/point</item>
