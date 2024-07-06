@@ -201,7 +201,6 @@ class SignUpActivity : AppCompatActivity() {
 
             Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show()
 
-
             if (!isFinishing) finish()
 
         }
