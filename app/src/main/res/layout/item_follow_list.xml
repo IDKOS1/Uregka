@@ -14,6 +14,7 @@
         android:background="@drawable/profile_circle_shape"
         android:clipToOutline="true"
         android:scaleType="centerCrop"
+        android:transitionName="profileTransition"
         android:src="@drawable/sample"/>
 
     <TextView
@@ -24,6 +25,6 @@
         android:gravity="center"
         android:maxLines="1"
         android:ellipsize="end"
-        android:text="테스트" />
+        android:text="@string/test" />
 </LinearLayout>
 

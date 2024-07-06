@@ -19,6 +19,7 @@
         android:src="@drawable/news"
         android:scaleType="fitXY"
         android:clipToOutline="true"
+        android:transitionName="imageTransition"
         android:background="@drawable/corners_10dp_radius"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -44,4 +44,9 @@
     <string name="intro">Intro</string>
     <string name="id_rename">No ID information available.</string>
     <string name="intro_contents">No Intro information available.</string>
+    <string name="test">test</string>
+    <string name="not_found_title">Not Found Title</string>
+    <string name="not_found_date">Not Found Date</string>
+    <string name="not_found_content">Not Found Content</string>
+    <string name="more">more</string>
 </resources>

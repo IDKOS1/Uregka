@@ -1,9 +1,9 @@
 package com.example.uregka
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import android.util.Pair
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,16 +32,19 @@ class MainActivity : AppCompatActivity() {
                     showToast("현재 화면 입니다.")
                     true
                 }
+
                 R.id.reporter -> {
                     val intent = Intent(this, FollowingListActivity::class.java)
                     startActivity(intent)
                     true
                 }
+
                 R.id.my_page -> {
                     val intent = Intent(this, MyPageActivity::class.java)
                     startActivity(intent)
                     true
                 }
+
                 else -> {
                     showToast("구현 예정")
                     true
@@ -69,7 +73,13 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userData", follow)
                 intent.putExtra("userName", textView.text)
-                startActivity(intent)
+
+                val options: ActivityOptions =
+                    ActivityOptions.makeSceneTransitionAnimation(
+                        this,
+                        Pair(imageView, "profileTransition")
+                    )
+                startActivity(intent, options.toBundle())
             }
 
             followLayout.addView(constraintLayout)
@@ -111,20 +121,23 @@ class MainActivity : AppCompatActivity() {
                 Log.i("info", "리니어 클릭")
                 val intent = Intent(this, DetailViewActivity::class.java)
                 intent.putExtra("articleData", article)
-                startActivity(intent)
+
+                val options: ActivityOptions =
+                    ActivityOptions.makeSceneTransitionAnimation(
+                        this,
+                        Pair(imageView, "imageTransition")
+                    )
+                startActivity(intent, options.toBundle())
             }
 
             val user = UserData.userList[writer]
             val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
-            cv_reporter.setOnClickListener{
+            cv_reporter.setOnClickListener {
                 Log.i("cv_reporter", "$user")
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userId", user?.userId)
-                startActivity(intent)
 
             }
-
-
 
             newsLayout.addView(layout)
         }

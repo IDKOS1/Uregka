@@ -58,4 +58,9 @@
     <string name="intro">한줄 소개</string>
     <string name="id_rename">아이디 정보가 없습니다.</string>
     <string name="intro_contents">소개 정보가 없습니다.</string>
+    <string name="test">테스트</string>
+    <string name="not_found_title">제목 정보가 없습니다.</string>
+    <string name="not_found_date">날짜 정보가 없습니다.</string>
+    <string name="not_found_content">내용 정보가 없습니다.</string>
+    <string name="more">더보기</string>
 </resources>
