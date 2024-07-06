@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class UserAdapter(private val context: Context, private val userList: List<User>) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
 
@@ -24,9 +25,16 @@ class UserAdapter(private val context: Context, private val userList: List<User>
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
         val user = userList[position]
-        val resourceId = context.resources.getIdentifier(user.profileImg, "drawable", context.packageName)
+        val resourceId =
+            context.resources.getIdentifier(user.profileImg, "drawable", context.packageName)
 
-        holder.imageView.setImageResource(resourceId)
+        Glide.with(context)
+            .load(resourceId)
+            .placeholder(R.drawable.ic_user)  // Placeholder image
+            .error(R.drawable.ic_user)        // Error image
+            .override(90, 90)
+            .into(holder.imageView)
+
         holder.name.text = user.userNickName
         holder.id.text = user.userId
         holder.intro.text = user.userIntro

@@ -25,7 +25,7 @@ object UserData {
             "kss3736@naver.com",
             8813,
             "안드로이드 어려워요",
-            "profile1"
+            "profile01"
         ),
         "MGone" to User(
             "MGone",
@@ -34,7 +34,7 @@ object UserData {
             "mzone@gmail.com",
             7212,
             "뷁",
-            "profile2"
+            "profile02"
         ),
         "johnDoe" to User(
             "johnDoe",
@@ -43,7 +43,7 @@ object UserData {
             "john.doe@example.com",
             1634,
             "Love coding and coffee!",
-            "profile3"
+            "profile03"
         ),
         "janeSmith" to User(
             "janeSmith",
@@ -52,7 +52,7 @@ object UserData {
             "jane.smith@example.com",
             26,
             "Traveller and foodie.",
-            "profile4"
+            "profile04"
         ),
         "charlieBrown" to User(
             "charlieBrown",
@@ -61,7 +61,7 @@ object UserData {
             "charlie.brown@example.com",
             561,
             "Peanuts fan.",
-            "profile5"
+            "profile05"
         ),
         "aliceJohnson" to User(
             "aliceJohnson",
@@ -70,7 +70,7 @@ object UserData {
             "alice.johnson@example.com",
             71,
             "Book lover and writer.",
-            "profile16"
+            "profile06"
         ),
         "michaelWhite" to User(
             "michaelWhite",
@@ -79,7 +79,7 @@ object UserData {
             "michael.white@example.com",
             952,
             "Fitness enthusiast.",
-            "profile7"
+            "profile07"
         ),
         "sarahConnor" to User(
             "sarahConnor",
@@ -88,7 +88,7 @@ object UserData {
             "sarah.connor@example.com",
             196,
             "Tech geek and movie buff.",
-            "profile8"
+            "profile08"
         ),
         "davidMiller" to User(
             "davidMiller",
@@ -97,7 +97,7 @@ object UserData {
             "david.miller@example.com",
             79,
             "Music and arts.",
-            "profile9"
+            "profile09"
         ),
         "emilyClark" to User(
             "emilyClark",
