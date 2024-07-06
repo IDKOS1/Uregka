@@ -63,24 +63,24 @@
             app:layout_constraintTop_toBottomOf="@id/tv_follow">
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_id"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/name"
+                android:text="@string/id"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_follow" />
 
             <TextView
-                android:id="@+id/tv_rename"
+                android:id="@+id/tv_user_id"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="@string/rename"
+                android:text="@string/id_rename"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -107,7 +107,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/tv__nick_rename"
+                android:id="@+id/tv_user_nickname"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,7 +141,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_follow" />
 
             <TextView
-                android:id="@+id/tv_followers_renames"
+                android:id="@+id/tv_user_followers"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -154,7 +154,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/count"
+            android:id="@+id/intro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
@@ -164,24 +164,24 @@
             app:layout_constraintTop_toBottomOf="@id/followers">
 
             <TextView
-                android:id="@+id/tv_email"
+                android:id="@+id/tv_intro"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/count"
+                android:text="@string/intro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_follow" />
 
             <TextView
-                android:id="@+id/tv_email_rename"
+                android:id="@+id/tv_user_intro"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="right"
-                android:text="@string/news_count"
+                android:text="@string/intro_contents"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -195,10 +195,10 @@
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/count">
+            app:layout_constraintTop_toBottomOf="@id/intro">
 
             <TextView
-                android:id="@+id/tv_news_count"
+                android:id="@+id/tv_email"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -208,7 +208,7 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/tv_news_count_recount"
+                android:id="@+id/tv_user_email"
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

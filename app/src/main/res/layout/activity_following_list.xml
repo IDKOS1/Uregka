@@ -51,7 +51,8 @@
         app:layout_constraintTop_toBottomOf="@id/tv_title">
     </EditText>
 
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_following_list"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="18dp"
@@ -59,15 +60,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:scrollbars="none"
-        app:layout_constraintTop_toBottomOf="@id/et_search">
-
-
-        <LinearLayout
-            android:id="@+id/ll_following_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/et_search"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

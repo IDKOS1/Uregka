@@ -14,9 +14,10 @@
         android:layout_height="0dp"
         android:animateLayoutChanges="false"
         android:animationCache="false"
+        style="@style/BottomNavigation"
         android:background="@color/white"
         app:itemIconTint="@color/bottom_navigation_item_color"
-         app:itemTextColor="@color/bottom_navigation_item_color"
+        app:itemTextColor="@color/bottom_navigation_item_color"
         app:itemIconSize="23dp"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +31,7 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/logotext"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
@@ -38,11 +39,11 @@
     <HorizontalScrollView
         android:id="@+id/hsv_follow_list"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:minHeight="100dp"
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_logo">
 
@@ -75,6 +76,7 @@
                 style="@style/TitleText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:text="@string/tv_new_content" />
 
         </LinearLayout>
