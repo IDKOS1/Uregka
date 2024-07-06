@@ -6,4 +6,5 @@
     <color name="sub">#FFFFFFFF</color>
     <color name="icon">#878787</color>
     <color name="point">#2F5AA8</color>
+    <color name="wrong">#FF0000</color>
 </resources>
