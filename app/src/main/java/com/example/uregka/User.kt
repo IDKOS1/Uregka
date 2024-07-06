@@ -25,7 +25,7 @@ object UserData {
             "kss3736@naver.com",
             8813,
             "안드로이드 어려워요",
-            "sample"
+            "profile1"
         ),
         "MGone" to User(
             "MGone",
@@ -34,7 +34,7 @@ object UserData {
             "mzone@gmail.com",
             7212,
             "뷁",
-            "sample"
+            "profile2"
         ),
         "johnDoe" to User(
             "johnDoe",
@@ -43,7 +43,7 @@ object UserData {
             "john.doe@example.com",
             1634,
             "Love coding and coffee!",
-            "sample"
+            "profile3"
         ),
         "janeSmith" to User(
             "janeSmith",
@@ -52,7 +52,7 @@ object UserData {
             "jane.smith@example.com",
             26,
             "Traveller and foodie.",
-            "sample"
+            "profile4"
         ),
         "charlieBrown" to User(
             "charlieBrown",
@@ -61,7 +61,7 @@ object UserData {
             "charlie.brown@example.com",
             561,
             "Peanuts fan.",
-            "sample"
+            "profile5"
         ),
         "aliceJohnson" to User(
             "aliceJohnson",
@@ -70,7 +70,7 @@ object UserData {
             "alice.johnson@example.com",
             71,
             "Book lover and writer.",
-            "sample"
+            "profile16"
         ),
         "michaelWhite" to User(
             "michaelWhite",
@@ -79,7 +79,7 @@ object UserData {
             "michael.white@example.com",
             952,
             "Fitness enthusiast.",
-            "sample"
+            "profile7"
         ),
         "sarahConnor" to User(
             "sarahConnor",
@@ -88,7 +88,7 @@ object UserData {
             "sarah.connor@example.com",
             196,
             "Tech geek and movie buff.",
-            "sample"
+            "profile8"
         ),
         "davidMiller" to User(
             "davidMiller",
@@ -97,7 +97,7 @@ object UserData {
             "david.miller@example.com",
             79,
             "Music and arts.",
-            "sample"
+            "profile9"
         ),
         "emilyClark" to User(
             "emilyClark",
@@ -106,7 +106,7 @@ object UserData {
             "emily.clark@example.com",
             2,
             "Nature lover.",
-            "sample"
+            "profile10"
         ),
         "danielLewis" to User(
             "danielLewis",
@@ -115,7 +115,7 @@ object UserData {
             "daniel.lewis@example.com",
             81,
             "Gamer and streamer.",
-            "sample"
+            "profile11"
         ),
     )
 }
