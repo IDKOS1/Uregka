@@ -80,7 +80,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="right"
+                android:textAlignment="textEnd"
                 android:text="@string/id_rename"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -112,8 +112,8 @@
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
                 android:layout_weight="1"
-                android:gravity="right"
                 android:text="@string/nick_rename"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -146,8 +146,8 @@
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
                 android:layout_weight="1"
-                android:gravity="right"
                 android:text="@string/follower_number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -180,8 +180,8 @@
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
                 android:layout_weight="1"
-                android:gravity="right"
                 android:text="@string/intro_contents"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
@@ -213,8 +213,8 @@
                 style="@style/Default"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textAlignment="textEnd"
                 android:layout_weight="1"
-                android:gravity="right"
                 android:text="@string/email_rename"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
