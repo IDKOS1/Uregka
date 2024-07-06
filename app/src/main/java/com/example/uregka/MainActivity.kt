@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -56,16 +57,18 @@ class MainActivity : AppCompatActivity() {
             val constraintLayout =
                 layoutInflater.inflate(style, followLayout, false)
 
-            val layout = constraintLayout.findViewById<LinearLayout>(R.id.ll_profile)
             val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image!!)
             val resourceId = resources.getIdentifier(follow.profileImg, "drawable", packageName)
             val textView = constraintLayout.findViewById<TextView>(R.id.profile_name!!)
+            val followList = constraintLayout.findViewById<LinearLayout>(R.id.ll_follow_list)
 
             imageView.setImageResource(resourceId)
             textView.text = follow.userNickName
 
-            layout.setOnClickListener{
+            followList.setOnClickListener {
                 val intent = Intent(this, MyPageActivity::class.java)
+                intent.putExtra("userData", follow)
+                intent.putExtra("userName", textView.text)
                 startActivity(intent)
             }
 
@@ -110,6 +113,18 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("articleData", article)
                 startActivity(intent)
             }
+
+            val user = UserData.userList[writer]
+            val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
+            cv_reporter.setOnClickListener{
+                Log.i("cv_reporter", "$user")
+                val intent = Intent(this, MyPageActivity::class.java)
+                intent.putExtra("userId", user?.userId)
+                startActivity(intent)
+
+            }
+
+
 
             newsLayout.addView(layout)
         }
