@@ -73,7 +73,13 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userData", follow)
                 intent.putExtra("userName", textView.text)
-                startActivity(intent)
+
+                val options: ActivityOptions =
+                    ActivityOptions.makeSceneTransitionAnimation(
+                        this,
+                        Pair(imageView, "profileTransition")
+                    )
+                startActivity(intent, options.toBundle())
             }
 
             followLayout.addView(constraintLayout)
@@ -130,7 +136,6 @@ class MainActivity : AppCompatActivity() {
                 Log.i("cv_reporter", "$user")
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userId", user?.userId)
-                startActivity(intent)
 
             }
 
