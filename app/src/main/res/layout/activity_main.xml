@@ -15,7 +15,7 @@
         android:animateLayoutChanges="false"
         android:animationCache="false"
         style="@style/BottomNavigation"
-        android:background="@color/white"
+        android:background="@color/bottom_background"
         app:itemIconTint="@color/bottom_navigation_item_color"
         app:itemTextColor="@color/bottom_navigation_item_color"
         app:itemIconSize="23dp"
@@ -34,7 +34,8 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/logotext"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/point" />
 
     <HorizontalScrollView
         android:id="@+id/hsv_follow_list"
