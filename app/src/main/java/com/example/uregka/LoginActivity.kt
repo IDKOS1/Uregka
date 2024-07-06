@@ -45,6 +45,16 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginButton.setOnClickListener {
+
+            if (idEditText.text.toString().trim().isEmpty() || passwordEditText.text.toString()
+                    .trim()
+                    .isEmpty()
+            ) {
+                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT)
+                    .show()
+                return@setOnClickListener
+            }
+
             val id = idEditText.text.toString().trim()
             if (isDuplicationId(id)) {
                 idWrongText.visibility = View.VISIBLE
@@ -70,16 +80,6 @@ class LoginActivity : AppCompatActivity() {
                 ).show()
                 passwordWrongText.setText(getString(R.string.login_different_password))
                 passwordWrongText.visibility = View.VISIBLE
-                return@setOnClickListener
-            }
-
-
-            if (idEditText.text.toString().trim().isEmpty() || passwordEditText.text.toString()
-                    .trim()
-                    .isEmpty()
-            ) {
-                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT)
-                    .show()
                 return@setOnClickListener
             }
 
