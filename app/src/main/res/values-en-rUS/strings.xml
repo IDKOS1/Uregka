@@ -40,4 +40,8 @@
     <string name="wrong_email_address">Invalid email format.</string>
     <string name="password_rule">Must be 5-12 characters, with at least one letter, one number, and one special character.</string>
     <string name="intro_wrong">Please enter between 2 and 18 characters.</string>
+    <string name="id">ID</string>
+    <string name="intro">Intro</string>
+    <string name="id_rename">No ID information available.</string>
+    <string name="intro_contents">No Intro information available.</string>
 </resources>
