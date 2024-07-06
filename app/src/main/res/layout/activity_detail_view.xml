@@ -38,7 +38,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/topBar"
         app:layout_constraintEnd_toEndOf="@id/topBar"
         app:layout_constraintStart_toStartOf="@id/topBar"
-        app:layout_constraintTop_toTopOf="@+id/topBar" />
+        app:layout_constraintTop_toTopOf="@+id/topBar"
+        app:tint="@color/point" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

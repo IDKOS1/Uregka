@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/main"
-    android:padding="14dp"
+    android:padding="16dp"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -25,18 +25,16 @@
         style="@style/Default"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginStart="2dp"
         android:layout_marginTop="100dp"
-        android:layout_marginEnd="2dp"
         android:autofillHints="username"
         android:background="@drawable/edittext_rounded_corner_rectangle"
-        android:drawableLeft="@drawable/icm_user_resize"
+        android:drawableStart="@drawable/icm_user_resize"
         android:drawablePadding="20dp"
         android:elevation="3dp"
         android:hint="@string/login_edittext_hint"
         android:textColorHint="@color/icon"
         android:inputType="text"
-        android:paddingStart="20dp"
+        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_login_icon" />
@@ -44,8 +42,9 @@
     <TextView
         android:id="@+id/tv_login_id_wrong"
         style="@style/SignUpTest"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
         android:text="@string/login_id_not_found"
@@ -60,12 +59,10 @@
         style="@style/Default"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginLeft="2dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="2dp"
         android:autofillHints="password"
         android:background="@drawable/edittext_rounded_corner_rectangle"
-        android:drawableLeft="@drawable/icm_pw_resize"
+        android:drawableStart="@drawable/icm_pw_resize"
         android:drawablePadding="30dp"
         android:elevation="3dp"
         android:hint="@string/login_edittext_password_hint"
@@ -84,24 +81,22 @@
         android:background="@drawable/icm_secret_resize"
         android:clickable="true"
         android:translationZ="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_login_password_wrong"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/et_login_password"
         app:layout_constraintEnd_toEndOf="@+id/et_login_password"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="@+id/et_login_password"
-        app:layout_constraintTop_toTopOf="@+id/et_login_password"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="@+id/et_login_password" />
 
     <TextView
         android:id="@+id/tv_login_password_wrong"
         style="@style/SignUpTest"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:paddingStart="8dp"
         android:text="@string/login_wrong_password"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_login_id_wrong"
         app:layout_constraintTop_toBottomOf="@+id/et_login_password" />
 
     <TextView
@@ -125,6 +120,7 @@
         android:layout_marginRight="2dp"
         android:background="@drawable/button_rounded_corner_rectangle"
         android:text="@string/login_button_text"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_id_search" />
 
@@ -134,12 +130,11 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="2dp"
-        android:textColor="@color/button"
-        android:backgroundTint="@color/white"
+        android:layout_marginTop="12dp"
         android:background="@drawable/button_rounded_corner_rectangle"
+        android:backgroundTint="@color/text"
         android:text="@string/sign_up_button_text"
+        android:textColor="@color/point"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
