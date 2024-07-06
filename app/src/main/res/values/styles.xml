@@ -58,7 +58,6 @@
         <item name="cornerSize">50%</item>
     </style>
 
-    <style name="BottomNavigation">
-        <item name="indicatorColor">#000000</item>
-    </style>
+    <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView"/>
+
 </resources>
