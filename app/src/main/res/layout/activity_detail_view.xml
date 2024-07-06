@@ -141,7 +141,7 @@
                     style="@style/UserName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="제목 정보가 없습니다."
+                    android:text="@string/not_found_title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -152,7 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="end"
-                    android:text="날짜 정보가 없습니다."
+                    android:text="@string/not_found_date"
                     app:layout_constraintEnd_toEndOf="parent" />
 
                 <!--본문-->
@@ -161,7 +161,7 @@
                     style="@style/Default"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="내용 정보가 없습니다."
+                    android:text="@string/not_found_content"
                     android:ellipsize="end"
                     android:maxLines="3"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +172,7 @@
                     style="@style/Sub"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="더보기"
+                    android:text="@string/more"
                     android:layout_marginTop="3dp"
                     android:gravity="end"
                     android:ellipsize="end"
