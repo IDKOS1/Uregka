@@ -46,6 +46,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.my_page -> {
                     val intent = Intent(this, MyPageActivity::class.java)
                     startActivity(intent)
+                    overridePendingTransition(
+                        R.drawable.animation_01,
+                        R.drawable.animation_02_none
+                    )
                     true
                 }
 
