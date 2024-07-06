@@ -36,7 +36,10 @@ class MainActivity : AppCompatActivity() {
                 R.id.reporter -> {
                     val intent = Intent(this, FollowingListActivity::class.java)
                     startActivity(intent)
-
+                    overridePendingTransition(
+                        R.drawable.animation_01,
+                        R.drawable.animation_02_none
+                    )
                     true
                 }
 
