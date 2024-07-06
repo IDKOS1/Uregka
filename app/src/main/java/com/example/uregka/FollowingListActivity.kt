@@ -15,11 +15,10 @@ class FollowingListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_following_list)
 
         val userList = UserData.userList.values.toList()
+        val recyclerView = findViewById<RecyclerView>(R.id.rv_following_list)
 
-        val followingList = findViewById<RecyclerView>(R.id.rv_following_list)
-
-        followingList.layoutManager = LinearLayoutManager(this)
-        followingList.adapter = UserAdapter(this, userList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = UserAdapter(this, userList)
 
         val back = findViewById<ImageView>(R.id.img_back)
         back.setOnClickListener{
