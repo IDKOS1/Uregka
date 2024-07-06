@@ -61,9 +61,9 @@ class MainActivity : AppCompatActivity() {
             val constraintLayout =
                 layoutInflater.inflate(style, followLayout, false)
 
-            val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image!!)
+            val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image)
             val resourceId = resources.getIdentifier(follow.profileImg, "drawable", packageName)
-            val textView = constraintLayout.findViewById<TextView>(R.id.profile_name!!)
+            val textView = constraintLayout.findViewById<TextView>(R.id.profile_name)
             val followList = constraintLayout.findViewById<LinearLayout>(R.id.ll_follow_list)
 
             imageView.setImageResource(resourceId)
@@ -114,6 +114,11 @@ class MainActivity : AppCompatActivity() {
             val writeDate = layout.findViewById<TextView>(R.id.tv_date)
             val date = article.writeDate
             writeDate.text = date
+
+            val writerImg = layout.findViewById<ImageView>(R.id.iv_writer_image)
+            val writerImgRes = UserData.userList[writer]?.profileImg
+            val writeImgId = resources.getIdentifier(writerImgRes, "drawable", packageName)
+            writerImg.setImageResource(writeImgId)
 
             // 클릭 리스너 설정
             val newsFeed = layout.findViewById<ConstraintLayout>(R.id.cl_news)
