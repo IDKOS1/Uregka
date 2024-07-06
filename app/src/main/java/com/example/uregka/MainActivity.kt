@@ -56,12 +56,18 @@ class MainActivity : AppCompatActivity() {
             val constraintLayout =
                 layoutInflater.inflate(style, followLayout, false)
 
+            val layout = constraintLayout.findViewById<LinearLayout>(R.id.ll_profile)
             val imageView = constraintLayout.findViewById<ImageView>(R.id.profile_image!!)
             val resourceId = resources.getIdentifier(follow.profileImg, "drawable", packageName)
             val textView = constraintLayout.findViewById<TextView>(R.id.profile_name!!)
 
             imageView.setImageResource(resourceId)
             textView.text = follow.userNickName
+
+            layout.setOnClickListener{
+                val intent = Intent(this, MyPageActivity::class.java)
+                startActivity(intent)
+            }
 
             followLayout.addView(constraintLayout)
         }
