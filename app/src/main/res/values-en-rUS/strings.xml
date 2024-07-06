@@ -30,7 +30,7 @@
     <string name="sign_up_missing_data_wrong">Some information is missing.</string>
     <string name="sign_up_Invalid_input">There is invalid input.</string>
     <string name="news">(No article content available.)</string>
-    <string name="following_list_title">Subscribed Journalists</string>
+    <string name="following_list_title">Following List</string>
     <string name="et_search">Search</string>
     <string name="tv_new_content">New Article</string>
     <string name="tv_intro_wrong">Please enter a short introduction.</string>

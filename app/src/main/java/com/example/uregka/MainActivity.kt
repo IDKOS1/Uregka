@@ -14,6 +14,7 @@ import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -127,7 +128,6 @@ class MainActivity : AppCompatActivity() {
 
             newsLayout.addView(layout)
         }
-
     }
 
     private fun showToast(message: String) {

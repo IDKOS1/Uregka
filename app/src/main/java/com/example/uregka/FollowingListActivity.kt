@@ -1,11 +1,12 @@
 package com.example.uregka
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class FollowingListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,24 +14,18 @@ class FollowingListActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_following_list)
 
+        val userList = UserData.userList.values.toList()
 
-       /*
-        var item = R.layout.following_list_item
+        val followingList = findViewById<RecyclerView>(R.id.rv_following_list)
 
-        val ll_following = findViewById<LinearLayout>(R.id.ll_following_list)
-        for (following in followingList) {
-            val constraintLayout =
-                layoutInflater.inflate(item, ll_following, false)
+        followingList.layoutManager = LinearLayoutManager(this)
+        followingList.adapter = UserAdapter(this, userList)
 
-            val imageView = constraintLayout.findViewById<ImageView>(R.id.poster!!)
-            val resourceId = resources.getIdentifier(following.imgSrc, "drawable",packageName)
-            val textView = constraintLayout.findViewById<TextView>(R.id.title!!)
-
-            imageView.setImageResource(resourceId)
-            textView.text = following.title
-
-            ll_following.addView(constraintLayout)
+        val back = findViewById<ImageView>(R.id.img_back)
+        back.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
-        */
     }
 }

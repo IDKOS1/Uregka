@@ -1,6 +1,7 @@
 package com.example.uregka
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,18 +13,21 @@ class MyPageActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_my_page)
 
+        val profileImg = findViewById<ImageView>(R.id.iv_profile_image)
         val followButton = findViewById<TextView>(R.id.tv_follow)
-        val id = findViewById<TextView>(R.id.tv_id_rename)
-        val nickName = findViewById<TextView>(R.id.tv__nick_rename)
-        val follow = findViewById<TextView>(R.id.tv_followers_renames)
-        val intro = findViewById<TextView>(R.id.tv_intro_contents)
-        val email = findViewById<TextView>(R.id.tv_email_rename)
+        val id = findViewById<TextView>(R.id.tv_user_id)
+        val nickName = findViewById<TextView>(R.id.tv_user_nickname)
+        val follow = findViewById<TextView>(R.id.tv_user_followers)
+        val intro = findViewById<TextView>(R.id.tv_user_intro)
+        val email = findViewById<TextView>(R.id.tv_user_email)
 
         val user = intent.getParcelableExtra("userData", User::class.java)
         val userName = intent.getStringExtra("userName")
 
         if (user != null) {
             if (userName.toString() in user.userNickName) {
+                val resourceId = resources.getIdentifier(user.profileImg, "drawable", packageName)
+                profileImg.setImageResource(resourceId)
                 id.text = user.userId
                 nickName.text = user.userNickName
                 follow.text = user.follower.toString()
@@ -33,7 +37,6 @@ class MyPageActivity : AppCompatActivity() {
         }
 
         followButton.setOnClickListener {
-
             var followCount = follow.text.toString().toInt()
 
             when (followButton.text) {
