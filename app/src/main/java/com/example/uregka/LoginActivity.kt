@@ -17,7 +17,6 @@ class LoginActivity : AppCompatActivity() {
 
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
