@@ -83,8 +83,7 @@ class MainActivity : AppCompatActivity() {
 
             followList.setOnClickListener {
                 val intent = Intent(this, MyPageActivity::class.java)
-                intent.putExtra("userData", follow)
-                intent.putExtra("userName", textView.text)
+                intent.putExtra("userName", follow.userId)
 
                 val options: ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
                     this,
