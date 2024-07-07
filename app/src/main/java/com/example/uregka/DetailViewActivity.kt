@@ -1,7 +1,9 @@
 package com.example.uregka
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +22,7 @@ class DetailViewActivity : AppCompatActivity() {
         val title = findViewById<TextView>(R.id.tv_title)
         val content = findViewById<TextView>(R.id.tv_content)
         val date = findViewById<TextView>(R.id.tv_date)
+        val reporterButton = findViewById<LinearLayout>(R.id.reporter_layout)
         var isExpanded = false
 
         if (article != null) {
@@ -55,5 +58,12 @@ class DetailViewActivity : AppCompatActivity() {
                 showBtn.text = "더보기"
             }
         }
+
+        reporterButton.setOnClickListener{
+            val intent = Intent(this, MyPageActivity::class.java)
+            intent.putExtra("userName", article?.writerId)
+            startActivity(intent)
+        }
+
     }
 }
