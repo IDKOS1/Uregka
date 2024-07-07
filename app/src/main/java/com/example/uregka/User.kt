@@ -21,20 +21,47 @@ object UserData {
         "idkos" to User(
             "idkos",
             "a1b2c3d4!",
-            "강아지맛쥬스",
+            "이강진",
             "kss3736@naver.com",
             8813,
             "안드로이드 어려워요",
-            "profile01"
+            "profile_kj"
         ),
-        "MGone" to User(
-            "MGone",
-            "mgmgmg!",
-            "말감지원",
-            "mzone@gmail.com",
-            7212,
-            "뷁",
-            "profile02"
+        "kdbswo" to User(
+            "kdbswo",
+            "a1b2c3d4!",
+            "김윤재",
+            "kdbswo@gmail.com",
+            5,
+            "일상의 작은 변화 속 진실을 찾아보도합니다.",
+            "profile_yj"
+        ),
+        "dacafo77" to User(
+            "dacafo77",
+            "a1b2c3d4!",
+            "최봉준",
+            "dacafo77@nate.com",
+            5,
+            "꽁꽁얼어붙은 한강위를 중점으로 취재합니다",
+            "profile_bj"
+        ),
+        "jisung15" to User(
+            "jisung15",
+            "a1b2c3d4!",
+            "김성진",
+            "gimseongjin302@gmail.com",
+            5,
+            "렉카인듯 렉카같지 않은 렉카같은 렉카기자",
+            "profile_sj"
+        ),
+        "GGOging" to User(
+            "GGOging",
+            "a1b2c3d4!",
+            "조인기",
+            "GGOging@gmail.com",
+            5,
+            "군부대를 중점으로 취재합니다",
+            "profile01"
         ),
         "johnDoe" to User(
             "johnDoe",

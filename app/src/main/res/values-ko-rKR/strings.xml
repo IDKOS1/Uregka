@@ -30,7 +30,7 @@
     <string name="sign_up_missing_data_wrong">입력되지 않은 정보가 있습니다.</string>
     <string name="sign_up_Invalid_input">유효하지 않은 입력이 있습니다.</string>
     <string name="news">(기사 내용이 없습니다.)</string>
-    <string name="following_list_title">구독 중인 기자</string>
+    <string name="following_list_title">구독</string>
     <string name="et_search">검색</string>
     <string name="tv_new_content">새로운 기사</string>
     <string name="tv_intro_wrong">짧은 소개를 입력해주세요.</string>
