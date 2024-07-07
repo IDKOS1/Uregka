@@ -127,7 +127,11 @@ class MainActivity : AppCompatActivity() {
 
             val writerImg = layout.findViewById<ImageView>(R.id.iv_writer_image)
             val writerImgRes = UserData.userList[writer]?.profileImg
-            val writeImgId = resources.getIdentifier(writerImgRes, "drawable", packageName)
+            val writeImgId = if(writerImgRes != null && writerImgRes.isNotEmpty()){
+                resources.getIdentifier(writerImgRes, "drawable", packageName)
+            }else{
+                R.drawable.profile01
+            }
             writerImg.setImageResource(writeImgId)
 
             // 클릭 리스너 설정
