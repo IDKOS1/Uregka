@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -50,8 +49,7 @@ class LoginActivity : AppCompatActivity() {
                     .trim()
                     .isEmpty()
             ) {
-                Toast.makeText(this, getString(R.string.login_empty_check), Toast.LENGTH_SHORT)
-                    .show()
+                showToast(this, getString(R.string.login_empty_check))
                 return@setOnClickListener
             }
 
@@ -73,11 +71,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (!isCheckPassword(id, password)) {
-                Toast.makeText(
-                    this,
-                    getString(R.string.login_different_password),
-                    Toast.LENGTH_SHORT
-                ).show()
+                showToast(this, getString(R.string.login_different_password))
                 passwordWrongText.setText(getString(R.string.login_different_password))
                 passwordWrongText.visibility = View.VISIBLE
                 return@setOnClickListener

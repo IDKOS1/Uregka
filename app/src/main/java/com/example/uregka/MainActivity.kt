@@ -3,11 +3,9 @@ package com.example.uregka
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -29,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
-                    showToast("현재 화면 입니다.")
+                    showToast(this, "현재 화면 입니다.")
                     true
                 }
 
@@ -54,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> {
-                    showToast("구현 예정")
+                    showToast(this,"구현 예정")
                     true
                 }
             }
@@ -156,9 +154,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+
 }
 
 
