@@ -147,8 +147,8 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent, options.toBundle())
             }
 
-            val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
-            cv_reporter.setOnClickListener {
+            val reporter = layout.findViewById<CardView>(R.id.cv_reporter)
+            reporter.setOnClickListener {
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userName", writer)
                 startActivity(intent)
