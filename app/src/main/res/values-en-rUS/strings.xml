@@ -38,7 +38,7 @@
     <string name="tv_return_text">Already a member?</string>
     <string name="tv_return_text_click">Go to Login</string>
     <string name="wrong_email_address">Invalid email format.</string>
-    <string name="password_rule">Must be 5-12 characters, with at least one letter, one number, and one special character.</string>
+    <string name="password_rule">Must be 5~12 characters, with at least one letter, one number, and one special character.</string>
     <string name="intro_wrong">Please enter between 2 and 18 characters.</string>
     <string name="id">ID</string>
     <string name="intro">Intro</string>

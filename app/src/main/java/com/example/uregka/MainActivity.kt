@@ -40,8 +40,8 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this, FollowingListActivity::class.java)
                     startActivity(intent)
                     overridePendingTransition(
-                        R.drawable.animation_01,
-                        R.drawable.animation_02_none
+                        R.anim.animation_01,
+                        R.anim.animation_02_none
                     )
                     true
                 }
@@ -51,8 +51,8 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("userName", loginId)
                     startActivity(intent)
                     overridePendingTransition(
-                        R.drawable.animation_01,
-                        R.drawable.animation_02_none
+                        R.anim.animation_01,
+                        R.anim.animation_02_none
                     )
                     true
                 }
@@ -83,8 +83,7 @@ class MainActivity : AppCompatActivity() {
 
             followList.setOnClickListener {
                 val intent = Intent(this, MyPageActivity::class.java)
-                intent.putExtra("userData", follow)
-                intent.putExtra("userName", textView.text)
+                intent.putExtra("userName", follow.userId)
 
                 val options: ActivityOptions = ActivityOptions.makeSceneTransitionAnimation(
                     this,
@@ -153,8 +152,8 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("userName", writer)
                 startActivity(intent)
                 overridePendingTransition(
-                    R.drawable.animation_01,
-                    R.drawable.animation_02_none
+                    R.anim.animation_01,
+                    R.anim.animation_02_none
                 )
             }
 
