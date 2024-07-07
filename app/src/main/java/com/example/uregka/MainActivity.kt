@@ -130,7 +130,6 @@ class MainActivity : AppCompatActivity() {
             // 클릭 리스너 설정
             val newsFeed = layout.findViewById<ConstraintLayout>(R.id.cl_news)
             newsFeed.setOnClickListener {
-                Log.i("info", "리니어 클릭")
                 val intent = Intent(this, DetailViewActivity::class.java)
                 intent.putExtra("articleData", article)
 
@@ -147,7 +146,6 @@ class MainActivity : AppCompatActivity() {
             val user = UserData.userList[writer]
             val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
             cv_reporter.setOnClickListener {
-                Log.i("cv_reporter", "$user")
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userId", user?.userId)
                 startActivity(intent)
