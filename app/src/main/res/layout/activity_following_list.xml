@@ -10,17 +10,6 @@
     android:paddingEnd="16dp"
     tools:context=".FollowingListActivity">
 
-    <ImageView
-        android:id="@+id/img_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_title" />
-
     <TextView
         android:id="@+id/tv_title"
         style="@style/TitleText"
@@ -38,14 +27,15 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="5dp"
-        android:autofillHints="검색"
+        android:autofillHints="@string/search_hint"
         android:background="@drawable/corners_20dp_radius"
         android:drawableStart="@drawable/icm_search"
         android:drawablePadding="18dp"
         android:elevation="3dp"
-        android:hint="@string/login_edittext_hint"
+        android:hint="@string/search_hint"
         android:inputType="text"
         android:paddingHorizontal="10dp"
+        android:textColorHint="@color/icon"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title">
