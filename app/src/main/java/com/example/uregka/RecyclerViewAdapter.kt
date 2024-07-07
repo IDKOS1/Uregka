@@ -36,7 +36,10 @@ class UserAdapter(private val context: Context, private val userList: List<User>
             .into(holder.imageView)
 
         holder.name.text = user.userNickName
-        holder.id.text = user.userId
+        holder.id.text = buildString {
+            append("@")
+            append(user.userId)
+        }
         holder.intro.text = user.userIntro
     }
 
