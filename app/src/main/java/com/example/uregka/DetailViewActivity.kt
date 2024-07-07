@@ -38,13 +38,7 @@ class DetailViewActivity : AppCompatActivity() {
             }
         }
 
-        val backBtn = findViewById<ImageView>(R.id.img_back)
         val showBtn = findViewById<TextView>(R.id.tv_more)
-
-        backBtn.setOnClickListener {
-            finish()
-        }
-
         showBtn.setOnClickListener {
             isExpanded = !isExpanded
             if(isExpanded) {
