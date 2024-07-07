@@ -3,11 +3,9 @@ package com.example.uregka
 import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -29,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
-                    showToast("현재 화면 입니다.")
+                    showToast(this, "현재 화면 입니다.")
                     true
                 }
 
@@ -54,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> {
-                    showToast("구현 예정")
+                    showToast(this,"구현 예정")
                     true
                 }
             }
@@ -130,7 +128,6 @@ class MainActivity : AppCompatActivity() {
             // 클릭 리스너 설정
             val newsFeed = layout.findViewById<ConstraintLayout>(R.id.cl_news)
             newsFeed.setOnClickListener {
-                Log.i("info", "리니어 클릭")
                 val intent = Intent(this, DetailViewActivity::class.java)
                 intent.putExtra("articleData", article)
 
@@ -147,7 +144,6 @@ class MainActivity : AppCompatActivity() {
             val user = UserData.userList[writer]
             val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
             cv_reporter.setOnClickListener {
-                Log.i("cv_reporter", "$user")
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userId", user?.userId)
                 startActivity(intent)
@@ -158,9 +154,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+
 }
 
 

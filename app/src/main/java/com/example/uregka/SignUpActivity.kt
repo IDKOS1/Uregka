@@ -9,7 +9,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
@@ -166,18 +165,13 @@ class SignUpActivity : AppCompatActivity() {
             // 비었을 때
             if (id.isEmpty() || password.isEmpty() || nickname.isEmpty() || email.isEmpty() || intro.isEmpty()
             ) {
-                Toast.makeText(
-                    this,
-                    getString(R.string.sign_up_missing_data_wrong),
-                    Toast.LENGTH_SHORT
-                ).show()
+                showToast(this, getString(R.string.sign_up_missing_data_wrong))
                 return@setOnClickListener
             }
 
             //유효한 입력 체크
             if (!isId || !isPassword || !isNickname || !isEmail || !isIntro) {
-                Toast.makeText(this, getString(R.string.sign_up_Invalid_input), Toast.LENGTH_SHORT)
-                    .show()
+                showToast(this, getString(R.string.sign_up_Invalid_input))
                 return@setOnClickListener
             }
 
@@ -185,8 +179,7 @@ class SignUpActivity : AppCompatActivity() {
             if (!isDuplicationEmail(email)) {
                 emailWrongTextView.setText(getString(R.string.sign_up_email_wrong))
                 emailWrongTextView.visibility = View.VISIBLE
-                Toast.makeText(this, getString(R.string.sign_up_email_wrong), Toast.LENGTH_SHORT)
-                    .show()
+                showToast(this, getString(R.string.sign_up_email_wrong))
                 return@setOnClickListener
             }
 
@@ -199,7 +192,7 @@ class SignUpActivity : AppCompatActivity() {
             intent.putExtra("data", data)
             setResult(RESULT_OK, intent)
 
-            Toast.makeText(this, getString(R.string.sign_up_success), Toast.LENGTH_SHORT).show()
+            showToast(this, getString(R.string.sign_up_success))
 
             if (!isFinishing) finish()
 

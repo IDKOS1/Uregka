@@ -1,7 +1,9 @@
 package com.example.uregka
 
+import android.content.Context
 import android.text.InputType
 import android.widget.EditText
+import android.widget.Toast
 import java.util.regex.Pattern
 
 //아이디 중복 체크
@@ -75,4 +77,8 @@ fun passwordToggle(
         passwordEditText.setSelection(passwordEditText.text.length)
         return true
     }
+}
+
+fun showToast(context: Context,message: String) {
+    Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
 }
