@@ -77,11 +77,12 @@
         <!-- 삭제버튼 -->
         <ImageButton
             android:id="@+id/btn_delete"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="10dp"
+            android:layout_height="15dp"
             android:layout_margin="8dp"
             android:background="@drawable/delete"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
+            android:backgroundTint="@color/icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
