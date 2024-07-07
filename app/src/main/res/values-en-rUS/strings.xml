@@ -50,4 +50,6 @@
     <string name="not_found_content">Not Found Content</string>
     <string name="more">more</string>
     <string name="search_hint">Search</string>
+    <string name="current_screen">The current screen.</string>
+    <string name="scheduled_for_implementation">Scheduled for implementation</string>
 </resources>

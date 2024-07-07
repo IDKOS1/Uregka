@@ -64,4 +64,6 @@
     <string name="not_found_content">내용 정보가 없습니다.</string>
     <string name="more">더보기</string>
     <string name="search_hint">검색</string>
+    <string name="current_screen">현재 화면 입니다.</string>
+    <string name="scheduled_for_implementation">구현 예정</string>
 </resources>
