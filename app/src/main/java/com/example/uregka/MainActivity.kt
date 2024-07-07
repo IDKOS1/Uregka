@@ -22,12 +22,17 @@ class MainActivity : AppCompatActivity() {
 
         makeFollowList()
         makeNewsList()
+        var loginId = ""
+        if (intent.hasExtra("id")) {
+            loginId = intent.getStringExtra("id")!!
+        }
+
 
         val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.home -> {
-                    showToast(this, "현재 화면 입니다.")
+                    showToast(this, getString(R.string.current_screen))
                     true
                 }
 
@@ -43,6 +48,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.my_page -> {
                     val intent = Intent(this, MyPageActivity::class.java)
+                    intent.putExtra("userName", loginId)
                     startActivity(intent)
                     overridePendingTransition(
                         R.drawable.animation_01,
@@ -52,7 +58,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 else -> {
-                    showToast(this,"구현 예정")
+                    showToast(this, getString(R.string.scheduled_for_implementation))
                     true
                 }
             }
@@ -141,11 +147,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent, options.toBundle())
             }
 
-            val user = UserData.userList[writer]
             val cv_reporter = layout.findViewById<CardView>(R.id.cv_reporter)
             cv_reporter.setOnClickListener {
                 val intent = Intent(this, MyPageActivity::class.java)
-                intent.putExtra("userId", user?.userId)
+                intent.putExtra("userName", writer)
                 startActivity(intent)
 
             }
