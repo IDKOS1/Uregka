@@ -15,7 +15,7 @@ data class Article(
 object ArticleList {
     val articleList: MutableList<Article> = mutableListOf(
         Article(
-            "johnDoe",
+            "dacafo77",
             "2024-07-25",
             "실감나는 가상현실 컨텐츠, 엔터테인먼트 산업의 혁신 동력",
             """
@@ -26,7 +26,7 @@ object ArticleList {
             "hd_vr"
         ),
         Article(
-            "idkos",
+            "jisung15",
             "2024-07-25",
             "AI 기술의 발전과 우리의 미래",
             """
@@ -38,7 +38,7 @@ object ArticleList {
             "hd_ai"
         ),
         Article(
-            "janeSmith",
+            "kdbswo",
             "2024-07-25",
             "재생 에너지의 현재와 미래",
             """
@@ -50,7 +50,7 @@ object ArticleList {
             "hd_energy"
         ),
         Article(
-            "janeSmith",
+            "idkos",
             "2024-07-28",
             "스마트 홈 기술의 진화",
             """
@@ -63,7 +63,7 @@ object ArticleList {
             "hd_smart_home"
         ),
         Article(
-            "charlieBrown",
+            "GGOging",
             "2024-07-29",
             "건강한 식습관을 위한 10가지 팁",
             """
