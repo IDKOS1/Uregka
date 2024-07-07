@@ -1,9 +1,7 @@
 package com.example.uregka
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
-import android.util.Pair
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -60,8 +58,8 @@ class DetailViewActivity : AppCompatActivity() {
             intent.putExtra("userName", article?.writerId)
             startActivity(intent)
             overridePendingTransition(
-                R.drawable.animation_01,
-                R.drawable.animation_02_none
+                R.anim.animation_01,
+                R.anim.animation_02_none
             )
         }
 
