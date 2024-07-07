@@ -26,7 +26,6 @@ class MyPageActivity : AppCompatActivity() {
 
         val user = UserData.userList[userName]
 
-        Log.d("user", user.toString())
         if (user != null) {
             if (userName.toString() in user.userId) {
                 val resourceId = resources.getIdentifier(user.profileImg, "drawable", packageName)
