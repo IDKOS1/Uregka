@@ -1,6 +1,7 @@
 package com.example.uregka
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -21,11 +22,13 @@ class MyPageActivity : AppCompatActivity() {
         val intro = findViewById<TextView>(R.id.tv_user_intro)
         val email = findViewById<TextView>(R.id.tv_user_email)
 
-        val user = intent.getParcelableExtra("userData", User::class.java)
         val userName = intent.getStringExtra("userName")
 
+        val user = UserData.userList[userName]
+
+        Log.d("user", user.toString())
         if (user != null) {
-            if (userName.toString() in user.userNickName) {
+            if (userName.toString() in user.userId) {
                 val resourceId = resources.getIdentifier(user.profileImg, "drawable", packageName)
                 profileImg.setImageResource(resourceId)
                 id.text = user.userId
@@ -42,13 +45,24 @@ class MyPageActivity : AppCompatActivity() {
             when (followButton.text) {
                 "Follow" -> {
                     followButton.text = "Unfollow"
-                    followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.wrong))
+                    followButton.setTextColor(
+                        ContextCompat.getColor(
+                            applicationContext!!,
+                            R.color.wrong
+                        )
+                    )
                     followCount++
                     follow.text = followCount.toString()
                 }
+
                 "Unfollow" -> {
                     followButton.text = "Follow"
-                    followButton.setTextColor(ContextCompat.getColor(applicationContext!!, R.color.point))
+                    followButton.setTextColor(
+                        ContextCompat.getColor(
+                            applicationContext!!,
+                            R.color.point
+                        )
+                    )
                     followCount--
                     follow.text = followCount.toString()
                 }
