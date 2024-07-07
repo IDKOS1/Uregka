@@ -19,12 +19,5 @@ class FollowingListActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = UserAdapter(this, userList)
-
-        val back = findViewById<ImageView>(R.id.img_back)
-        back.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
     }
 }
