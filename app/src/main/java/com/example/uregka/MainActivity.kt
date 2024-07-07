@@ -152,7 +152,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this, MyPageActivity::class.java)
                 intent.putExtra("userName", writer)
                 startActivity(intent)
-
+                overridePendingTransition(
+                    R.drawable.animation_01,
+                    R.drawable.animation_02_none
+                )
             }
 
             newsLayout.addView(layout)
