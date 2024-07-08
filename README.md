@@ -45,7 +45,7 @@ UserList를 저장한 싱글톤 object 활용, 새로 회원가입하는 ID가 �
 
 **구독 리스트 애니매이션**
 
-<img src="https://github.com/IDKOS1/Uregka/assets/114373070/1969ebc5-3c8c-4934-929f-55b8d15d531c" width="30%" height="30%" />
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/1969ebc5-3c8c-4934-929f-55b8d15d531c" width="30%" height="30%" /> 
 
 
 **뉴스 피드 애니매이션**
