@@ -12,7 +12,7 @@ Text Watcher와 Regex를 활용하여 텍스트 변화를 감지하여 실시간
 UserList를 저장한 싱글톤 object 활용, 새로 회원가입하는 ID가 존재하는 ID인지 중복성 검사를 진행
 
 **로그인 화면**
-
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/457b2f71-52bf-46ce-8ee9-997a661f8e73" width="30%" height="30%" />
 ![sign_in](https://github.com/IDKOS1/Uregka/assets/114373070/457b2f71-52bf-46ce-8ee9-997a661f8e73)
 
 
