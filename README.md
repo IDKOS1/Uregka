@@ -62,9 +62,9 @@ UserList를 저장한 싱글톤 object 활용, 새로 회원가입하는 ID가 �
 
 ### 4. 다크 테마 적용
 
-<img src="https://github.com/IDKOS1/Uregka/assets/114373070/f1fee21c-15f8-4570-b8bc-84f0161d2fd3" width="30%" height="30%" />
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/f1fee21c-15f8-4570-b8bc-84f0161d2fd3" width="100%" height="100%" />
 
 
 ### 5. 영문 버전
 
-<img src="https://github.com/IDKOS1/Uregka/assets/114373070/60d1a187-985e-4588-9166-caa1bce6c41a" width="30%" height="30%" />
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/60d1a187-985e-4588-9166-caa1bce6c41a" width="100%" height="100%" />
