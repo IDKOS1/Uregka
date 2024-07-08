@@ -1,4 +1,6 @@
 # 당신의 신선한 뉴스 Uregka
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/bb056782-9258-4ca1-a7d9-9543aa14d12b" width="80%" height="80%" />
+
 
 ## 🙌  앱 소개
 유렉카는 어디서나 볼 수 있는 흔한 소식이 아닌 자신의 취향에 맞는 소식을 모아서 보기 위한 뉴스 애플리케이션 입니다.
@@ -62,9 +64,9 @@ UserList를 저장한 싱글톤 object 활용, 새로 회원가입하는 ID가 �
 
 ### 4. 다크 테마 적용
 
-<img src="https://github.com/IDKOS1/Uregka/assets/114373070/f1fee21c-15f8-4570-b8bc-84f0161d2fd3" width="30%" height="30%" />
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/f1fee21c-15f8-4570-b8bc-84f0161d2fd3" width="90%" height="90%" />
 
 
 ### 5. 영문 버전
 
-<img src="https://github.com/IDKOS1/Uregka/assets/114373070/60d1a187-985e-4588-9166-caa1bce6c41a" width="30%" height="30%" />
+<img src="https://github.com/IDKOS1/Uregka/assets/114373070/60d1a187-985e-4588-9166-caa1bce6c41a" width="90%" height="90%" />
