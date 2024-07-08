@@ -61,7 +61,7 @@ object UserData {
             "GGOging@gmail.com",
             5,
             "군부대를 중점으로 취재합니다",
-            "profile01"
+            "profile_ik"
         ),
         "johnDoe" to User(
             "johnDoe",
